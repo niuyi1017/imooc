@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>DatePicker</title>
+		<link rel="stylesheet" type="text/css" href="css/datePicker.css"/>
+		<style type="text/css">
+			.datepicker{
+				height: 24px;
+				line-height: 24px;
+				width: 250px;
+				padding: 5px;
+				border: 1px solid #CCCCCC;
+				border-radius: 5px;
+			}
+			.datepicker:focus{
+				outline: 0 none;
+				border: 1px solid #1ABC9C;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<h3>请选择日期</h3>
+		<input type="text" class="datepicker" />
+		
+		
+		<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/datePicker.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			datepicker.init('.datepicker');
+		</script>
+	</body>
+</html>
+
+
