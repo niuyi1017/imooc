@@ -1,12 +1,3 @@
----
-layout: post
-title: 前端组件————datePicker 日期选择器
-date: 2018-04-22
-categories: 前端
-tags: 前端 组件化 慕课网 datePicker 
-author: niuyi  
-cover: 'http://p7kyjkmgh.bkt.clouddn.com/58df52310001cf4506000338-240-135.jpg'
----  
 
 
 > 一个简单的前端组件 —— datePicker 日期选择器   
