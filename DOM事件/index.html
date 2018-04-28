@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>DOM事件</title>
+		<link rel="stylesheet" type="text/css" href="css/DOM.css"/>
+		
+	</head>
+	<body>
+		<div class="main-wrap">
+		<header><h1>DOM事件</h1>
+			<p>理解事件流、使用事件处理程序、不同的事件类型</p>
+		</header>
+		<div class="wrap">
+			<div class="zhang">
+				<h2>第一章  事件流</h2>
+				<h3>1.1 事件冒泡</h3>
+				<h3>1.2 事件捕获</h3>
+			</div>
+			<div class="zhang">
+				<h2>第二章  事件处理程序</h2>
+				<h3>2.1 HTML事件处理程序</h3>
+				<h3>2.2 DOM 0 级事件处理程序</h3>
+				<h3>2.3 DOM 2 级事件处理程序</h3>
+				<p>
+					DOM 2 级别定义了两个方法<br />
+					用于处理指定和删除事件处理程序的操作<br />
+					addEventListener()和removeEventListener() <br />
+					接受三个参数：要处理的事件名，作为事件处理程序的函数和布尔值<br />
+				</p>
+				
+				<!--DOM 2 级事件实例-->
+				
+				<div class="box">
+					<input type="button" id="btn" value=" DOM 2 级事件 " />
+				</div>
+				
+				<h3>2.4 IE事件处理程序  </h3>
+				<p>attachEvent() <br />
+				datachEvent()</p>
+				
+				<!--IE事件处理实例-->
+				
+				<div class="box">
+					<input type="button" id="IEbtn" value=" IE 事件处理 " />
+				</div>
+				
+				<h3>2.5 跨浏览器事件处理程序 </h3>
+				<p>恰当地使用能力检测</p>
+				<!--跨浏览器事件处理实例-->
+				
+				<div class="box">
+					<input type="button" id="CrsBtn" value=" 跨浏览器事件处理 " />
+					
+				</div>
+				
+			</div>
+			<div class="zhang">
+				<h2>第三章  事件对象</h2>
+				<h3>3.1 DOM中的事件对象</h3>
+				<h4>3.1.1 type 属性：用于获取事件类型</h4>
+				<h4>3.1.2 target 属性：用于获取事件目标</h4>
+				<h4>3.1.3 stopPropagation()方法 用于阻止事件冒泡</h4>
+				<h4>3.1.4 prevenDefault()方法 用于阻止事件默认行为</h4>
+				<h3>3.2 IE中的事件对象</h3>
+				<h4>3.2.1 type 属性：用于获取事件类型</h4>
+				<h4>3.2.2 srcElement 属性：用于获取事件目标</h4>
+				<h4>3.2.3 cancleBubble()方法 用于阻止事件冒泡</h4>
+				<h4>3.2.4 returnValue()方法 用于阻止事件默认行为</h4>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+			function showValue(){
+				alert(this.value)
+			}
+			function showMsg(){
+				alert('IE事件处理')
+			}
+			<!--DOM 2 级事件实例-->
+			
+//			var btn = document.getElementById('btn');
+//			btn.addEventListener('click',showValue,false);
+//			btn.removeEventListener('click',showValue,false);
+
+
+			<!--IE事件处理实例-->
+			
+//			var IEbtn = document.getElementById('IEbtn');
+//			IEbtn.attachEvent('onclick',showMsg);
+//			IEbtn.detachEvent('onclick',showMsg);
+
+			<!--跨浏览器事件处理实例-->
+			
+			var eventUtil = {
+				addHandler:function(elelment,type,handle){
+					if(elelment.addEventListener){
+						elelment.addEventListener(type,handle,false);
+					}
+					else if (elelment.attachEvent) {
+						elelment.attachEvent('on'+type,handle);
+					} 
+					else{
+						elelment['on'+type] = handle;
+					}
+				},
+				removeHandler:function(elelment,type,handle){
+					if(elelment.removeEventListener){
+						elelment.removeEventListener(type,handle,false);
+					}
+					else if (elelment.detachEvent) {
+						elelment.detachEvent('on'+type,handle);
+					} 
+					else{
+						elelment['on'+type] = null;
+					}
+				}
+				
+			}
+			var crsBtn = document.getElementById('CrsBtn')
+			eventUtil.addHandler(crsBtn,'click',showValue);
+//			eventUtil.removeHandler(crsBtn,'click',showValue);
+
+			
+		</script>
+</html>

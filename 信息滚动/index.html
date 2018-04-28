@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>无缝信息滚动</title>
+		<link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<h1>我是标题</h1>
+			<div id="con" class="con">
+				<ul id="con1">
+					<li>1dasdvhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>2sdasdvhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>3sdasdvhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>4sdasdvhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>s5dasdvhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sd6asdvhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sda7sdvhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sdas8dvhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sdasd9vhnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sdasdv10hnszdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sdasdvhn11szdvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sdasdvhnsz12dvdsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sdasdvhnszdv13dsfvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					<li>sdasdvhnszdvds14fvsdfvsdvdvzsdvo;dvo;faosdifjaskn</li>
+					
+				</ul>
+				
+				<ul id="con2"></ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var area = document.getElementById('con');
+			var con1 = document.getElementById('con1');
+			var con2 = document.getElementById('con2');
+			con2.innerHTML = con1.innerHTML;
+			
+			area.scrollTop = 0;
+			var timer =null;
+			timer = setInterval(function(){
+				myScroll();
+			},20);
+			
+			
+			area.onmouseover = function(){
+				clearInterval(timer);
+			}
+			area.onmouseout = function(){
+				timer = setInterval(function(){
+				myScroll();
+			},20);
+			}
+			
+			function starMove(){
+				area.scrollTop++;
+				timer = setInterval(function(){
+				myScroll();
+			},20);
+			}
+			function myScroll(){
+				
+				if(area.scrollTop%30==0){
+					clearInterval(timer);
+					timer = setTimeout(function(){
+						starMove();
+//						console.log("iii")
+					},1000);
+					}else{
+						area.scrollTop++;
+						if(area.scrollTop>=con1.offsetHeight){
+							area.scrollTop = 5;
+						}
+			
+			}	 
+		}
+	}
+	</script>
+</html>

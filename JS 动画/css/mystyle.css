@@ -1,0 +1,88 @@
+@keyframes move{
+	0%{
+		transform: translateY(0);
+		opacity: 1;
+		}
+	50%{
+		transform: translateY(-50%);
+		opacity: 0;
+	}
+	70%{
+		transform: translateY(50%);
+		opacity: 0;
+	}
+	100%{
+		transform: translateY(0);
+		opacity: 1;
+	}	
+}
+@keyframes guoDong{
+	0%{transform: rotate(0deg) scale(1);}
+	30%{transform: rotate(20deg)scale(0.95);}
+	60%{transform: rotate(-10deg) scale(0.95);}
+	80%{transform: rotate(5deg) scale(0.95);}
+	90%{transform: rotate(-3deg) scale(0.95);}
+	100%{transform: rotate(0deg) scale(1);}
+}
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+.warp{
+	width: 900px;
+	height: 630px;
+	background: #FFA500;
+	margin: auto;
+	
+}
+.stage{
+	width: 600px;
+	height: 400px;
+	background: #FFFF00;
+	margin: auto;
+	box-shadow: 0 0 20px #000;
+	position: relative;
+	top: 100px;
+}
+ul li{
+	list-style: none;
+	display: inline-block;
+	height:150px;
+	width: 150px;
+	background: cornflowerblue;
+	margin: 20px;
+	box-shadow: 0 0 10px #000000;
+	position: relative;
+	
+}
+ul li i{
+	display: inline-block;
+	position: absolute;
+	top: 20px;
+	left: 33px;
+	/*height: 100px;
+	width: 100px;*/
+	/*background: #000000;*/
+	
+}
+ 
+ul li:hover i{
+	
+  animation: move 0.5s ease-in-out;
+
+}
+ul li i img{
+	height: 80px;
+	width: 80px;
+	/*position: absolute;
+	top:10px;
+	left: 10px;*/
+}
+ul li p{
+	position: absolute;
+	top:120px;
+	left: 45px;
+	color: #FFF;
+	font-size: 24px;
+}

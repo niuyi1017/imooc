@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<ul id="list">
+			<li class="on">1</li>
+			<li class="select">2</li>
+			<li class="on">3</li>
+			<li>4</li>
+		</ul>
+		<p class="on">class为on的p标签</p>
+</body>
+</html>
+<script type="text/javascript">
+  window.onload=function(){
+     var len1= getByClass('on','list');
+     alert(len1.length);  // 结果等于2为正确
+     var len2= getByClass('on');
+     alert(len2.length);  // 结果等于3为正确
+}
+function getByClass(clsName, parent){
+ //定义函数getByClass()实现获取document或指定父元素下所有class为on的元素  
+    var oParent = parent?document.getElementById(parent):document;
+    var oBoxs = new Array();
+    var s = oParent.getElementsByTagName('*');
+    
+    for(var i=0;i<s.length;i++){
+        if(s[i].className==clsName){
+            oBoxs.push(s[i]);
+        }
+    }
+    return oBoxs;
+    
+
+}
+</script>

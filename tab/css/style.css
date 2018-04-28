@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+body{
+	background: orange;
+}
+.menu{
+	width: 200px;
+	margin: 50px auto;
+	padding: 10px;
+	/*background: #FFFFFF;*/
+	
+}
+.menu p{
+	margin: 7px;
+	background: #f35336;
+	padding:1px 15px;
+	height: 30px;
+	color: #FFFFFF;
+	font-size: 14px;
+	line-height: 30px;
+	-webkit-box-shadow: 0 5px 10px #FF3300;
+	-moz-box-shadow: 0 5px 10px #FF3300;
+	box-shadow: 0 5px 10px #FF3300;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	transition: all 0.1s;
+}
+.menu p:hover{
+	background: #ff3300;
+	-webkit-transform: scale(1.05);
+}
+.menu .select{
+	background: #dc3023;
+	margin-bottom: 0;
+}
+.menu ul{
+	list-style: none;
+	
+	/*background: #EEEEEE;*/
+	padding: 5px;
+}
+.menu ul li{
+	position: relative;
+	height: 25px;
+	width: 70%;
+	line-height: 25px;
+	background: #e9546b;
+	color: #FFFFFF;
+	padding: 3px 15px;
+	margin: 5px 10px;
+	-webkit-box-shadow: 0 5px 10px #E9546B;
+	-moz-box-shadow: 0 5px 10px #e9546b;
+	box-shadow: 0 5px 10px #E9546B;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 12px;
+	transition: all 0.1s;
+	
+}
+.menu ul li:hover{
+	-webkit-transform: scale(1.1);
+}
+.menu ul li span{
+	position: absolute;
+	top: 0px;
+	left: -260px;
+	display: block;
+	height: 100px;
+	width: 250px;
+	background: #FFFFFF;
+	
+}
+.menu ul li span .text{
+	position: absolute;
+	top: 20px;
+	left: 110px;
+	color: #000000;
+}

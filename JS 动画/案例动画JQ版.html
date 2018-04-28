@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画案例</title>
+		<link rel="stylesheet" href="css/mycss.css" />
+		
+	</head>
+	<body>
+		<div class="warp">
+			<div class="stage">
+				<ul>
+					<li><i><img src="img/奖牌.png" alt="" /></i><p>奖   牌</p></li>
+					<li><i><img src="img/奖牌.png" alt="" /></i><p>奖   牌</p></li>
+					<li><i><img src="img/奖牌.png" alt="" /></i><p>奖   牌</p></li>
+					<li><i><img src="img/奖牌.png" alt="" /></i><p>奖   牌</p></li>
+					<li><i><img src="img/奖牌.png" alt="" /></i><p>奖   牌</p></li>
+					<li><i><img src="img/奖牌.png" alt="" /></i><p>奖   牌</p></li>
+				</ul>
+			</div>
+		</div>
+		
+	</body>
+	<script src="js/jQuery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.stage ul li').mouseenter(function(){
+				$(this).find('i').animate({top:'-25px',opacity:'0'},300,function(){
+					$(this).css({top:'40px'});
+					$(this).animate({top:'20px',opacity:'1'},200)
+				})
+			})
+		})
+	</script>
+</html>

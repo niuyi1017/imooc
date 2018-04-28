@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>图片画廊</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	</head>
+	<body onselectstart="return false">
+		<div class="wrap" id="wrap">
+			<div class="photo photo_front" onclick="turn(this)" id="photo_{{index}}">
+				<div class="photo-wrap">
+					<div class="side side-front">
+						<p class="image"><img src="photo/{{img}}"/></p>
+						<p class="caption">{{caption}}</p>
+					</div>
+					<div class="side side-back">
+						<p class="desc">{{desc}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="photo/data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/myjs.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,167 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	position: relative;
+	width:220px;
+	border: 2px solid crimson;
+	box-shadow: 0 0 10px #DC143C;
+	top: 20px;
+	left: 20px;
+	background: #FFFFFF;
+}
+.box #title{
+	display: block;
+	height: 50px;
+	width: 220px;
+	background: #DC143C;
+}
+.box span a{
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	height: 50px;
+	text-decoration: none;
+	font-size: 24px;
+	font-family: "微软雅黑";
+	letter-spacing: 10px;
+	color: #fff;width: 220px;
+	
+}
+.box li{
+	/*background: #ddd;*/
+	margin: 2px;
+	height: 35px;
+	list-style: none;
+	padding: 0 0 0 70px;
+}
+.box li a{
+	line-height: 35px;
+	/*display: inline-block;*/
+	height: 35px;
+	text-align: center;
+	
+	text-decoration: none;
+	font-size: 16px;
+	color: #555;
+}
+
+.box li i{
+	float: right;
+	color: #ccc;
+	display: inline-block;
+	/*height: 35px;
+	line-height: 35px;*/
+	margin: 10px 4px 0;
+}
+.box li:hover {
+	background: #fff;
+	box-shadow: 0 0 10px #CCCCCC;
+}
+.box li:hover #white-block{
+	display:inline-block;
+	height: 35px;
+	width: 20px;
+	position: relative;
+	float: right;
+	right: -15px;
+	color: #FFFFFF;
+	background: #FFFFFF;
+	z-index: 10;
+	
+}
+.box li:hover i{
+	color: #fff;
+}
+.box li a:hover{
+	color: #DC143C;
+	text-decoration: underline;
+}
+.box  .submenu{
+	display: none;
+	width: 600px;
+	height: 380px;
+	position: absolute;
+	left: 210px;
+	top: 40px;
+	background: #FFFFFF;
+	box-shadow: 0 0 15px #DC143C;
+}
+.submenu .top li{
+	display: inline-block;
+
+}
+.box li:hover .submenu{
+	display: block;
+}
+.web{
+	list-style: none;
+}
+.web li{
+	display: inline-block;
+}
+.web li a{
+	color: #999999;
+}
+.web li:hover{
+	box-shadow: 0 0 0 #FFFFFF;
+}
+.web li a:hover{
+	text-decoration: none;
+}
+.web span{
+	display: inline-block;
+	margin: 20px 0 0 30px;
+	height: 30px;
+	width: 40px;
+	line-height: 30px;
+	color: #666;
+}
+hr{
+	display: inline-block;
+	width: 500px;
+}
+.bottom{
+	height: 160px;
+	padding-left: 30px;
+}
+.list li{
+	display: inline-block;
+    width: 275px;
+    height: 60px;
+    line-height: 60px;
+    padding: 5px;
+    margin: 10px 0px 0 0px;
+    overflow: hidden;
+    float: left;
+    
+}
+.list li:hover{
+	box-shadow: 0 0 0 #FFFFFF;
+}
+.list li img{
+	display: inline-block;
+	height: 60px;
+	width: 110px;
+	float: left;
+	margin-right: 10px;
+}
+.list li p{
+	display:inline-block;
+	float: left;
+	height: 30px;
+	width: 140px;
+	height: 30px;
+	line-height: 30px;
+	
+	
+}
+.list li .tit{
+	font-size: 12px;
+	color: #333;
+}
+.list li .desc{
+	font-size: 10px;
+	color: #666666;
+}

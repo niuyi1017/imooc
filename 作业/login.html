@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		<link rel="stylesheet" type="text/css" href="css/mycss.css"/>
+		<script src="js/myjs.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="log-wrapper">
+		<div class="loginbox">
+			<div class="login">
+				<h2>登录</h2>
+				<ul class="user">
+					<li class="username">用户名</li>
+					<li class="kuang"><input type="text" name="username" id="username" value="用户名/手机号" onfocus="focus1()"onblur="blur1()"/></li>
+					<li class="zi"><a href="#">注册新用户</a></li>
+				</ul>
+				<ul class="pass">
+					<li class="password">密码</li>
+					<li class="kuang"><input type="password" name="password" id="password" value="" /></li>
+					<li class="zi"><a href="#">忘记密码</a></li>
+				</ul>
+				<ul class="st">
+					<li ><input type="checkbox" name="online" id="online" value="" />自动登录</li>
+					<li>状态<select name="zaixian">
+						<option value="">在线</option>
+						<option value="">隐身</option>
+						<option value="">忙碌</option>
+						<option value="">离开</option>
+					</select></li>
+				</ul>
+				<a class="butt" href="#">登录</a>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

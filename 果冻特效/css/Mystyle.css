@@ -1,0 +1,84 @@
+body{
+	margin: 0;
+	padding: 0;
+	
+}
+
+nav{
+	
+	position:fixed;
+	top: 0;
+	height: 50px;
+	width: 100%;
+	background: #333;
+	color: #fff;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+	z-index: 10;
+}
+h2{
+	text-align: center;
+	margin:10px ;
+	
+}
+.box{
+	height: 420px;
+	width: 800px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -400px;
+	background: #ddd;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+}
+ul{
+	list-style: none;
+	
+}
+@keyframes guoDong{
+	0%{transform: rotate(0deg) scale(1);}
+	30%{transform: rotate(20deg)scale(0.95);}
+	60%{transform: rotate(-10deg) scale(0.95);}
+	80%{transform: rotate(5deg) scale(0.95);}
+	90%{transform: rotate(-3deg) scale(0.95);}
+	100%{transform: rotate(0deg) scale(1);}
+}
+ul .common {
+	display: inline-block;
+	height: 150px;
+	width: 200px;
+	margin: 20px 20px;
+	background: #FFFFFF;
+	box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	
+}
+
+ul .a{
+	background: #1abc9c;
+}
+ul .b{
+	background: #2ecc71;
+}
+ul .c{
+	background: #3498db;
+}
+ul .d{
+	background: #9b59b6;
+}
+ul .e{
+	background: #34495e;
+}
+ul .f{
+	background: #ff5555;
+}
+ul .common:hover{
+	
+	animation: guoDong 0.5s ease-in-out;
+	background: rgba(0,0,0,0.5);
+	
+}

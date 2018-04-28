@@ -1,0 +1,104 @@
+body{
+	font-size: 20px;
+	background: aqua;
+}
+ body,ul{
+ 	margin: 0;
+ 	padding: 0;
+ 	list-style: none;
+ }
+.wrap{
+	width: 70%;
+	height: 200px;
+	margin: 50px auto;
+	background: #fff;
+}
+.wrap h1{
+	font-size: 30px;
+	text-align: center;
+	line-height: 200px;
+}
+.effect{
+	position: relative;
+	-webkit-box-shadow: 0px 1px 4px rgba(0,0,0,0.3),0px 0px 40px rgba(0,0,0,0.3) inset;
+	-moz-box-shadow: 0px 1px 4px rgba(0,0,0,0.3),0px 0px 40px rgba(0,0,0,0.3) inset;
+	box-shadow: 0px 1px 4px rgba(0,0,0,0.3),0px 0px 40px rgba(0,0,0,0.3) inset;
+}
+.effect:before,.effect:after{
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	bottom: 0px;
+	left: 10px;
+	right: 10px;
+	-webkit-box-shadow: 0 0px 20px rgba(0,0,0,0.8);
+	-moz-box-shadow: 0 0px 20px rgba(0,0,0,0.8);
+	box-shadow: 0 0px 20px rgba(0,0,0,0.8);
+	border-radius: 100px/10px;
+}
+.box{
+	width: 980px;
+	height: auto;
+	clear: both;
+	overflow: hidden;
+	margin: 20px auto;
+	
+	
+}
+.box li{
+	width: 300px;
+	height: auto;
+	margin:20px 10px ;
+	background:#FFFFFF;
+	position: relative;
+	float: left;
+	/*border: 0.1px solid #FFFFFF;*/
+	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0px 0px 60px rgba(0,0,0,0.3)inset;
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0px 0px 60px rgba(0,0,0,0.3) inset;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.27),0px 0px 60px rgba(0,0,0,0.3) inset;
+}
+.box li img{
+	display: block;
+	width: 290px;
+	height: 200px;
+	margin: 5px;
+}
+.box li:before{
+	content: '';
+	position: absolute;
+	z-index: -2;
+	width: 89%;
+	height: 78%;
+	left: 12px;
+	bottom: 10px;
+	background: transparent;
+	-webkit-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+	-webkit-transform: skew(-11deg) rotate(-4deg);
+	-moz-transform: skew(-11deg) rotate(-4deg);
+	-ms-transform: skew(-11deg) rotate(-4deg);
+	-o-transform: skew(-11deg) rotate(-4deg);
+	transform: skew(-11deg) rotate(-4deg);
+	
+}
+.box li:after{
+	content: '';
+	position: absolute;
+	z-index: -2;
+	width: 89%;
+	height: 78%;
+	right: 13px;
+	bottom: 9px;
+	background: transparent;
+	-webkit-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+	-webkit-transform: skew(12deg) rotate(4deg);
+	-moz-transform: skew(12deg) rotate(4deg);
+	-ms-transform: skew(12deg) rotate(4deg);
+	-o-transform: skew(12deg) rotate(4deg);
+	transform: skew(12deg) rotate(4deg);
+	
+}

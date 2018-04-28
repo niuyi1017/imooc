@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+body{
+	background: #ddd;
+}
+.main-wrap{
+	/*position: absolute;
+	left: 50%;*/
+	margin: 20px auto;
+	padding: 20px;
+	width: 700px;
+	background: #fff;
+	box-shadow: 0 0 30px #555;
+}
+h1{
+	text-align: center;
+	margin: 20px;
+}
+header p{
+	text-align: center;
+}
+.wrap{
+	margin: 10px;
+	padding: 10px;
+	
+}
+.zhang{
+	margin: 10px;
+	padding: 10px;
+}
+.zhang h2{
+	margin: 10px auto;
+	
+}
+.zhang h3{
+	margin: auto 15px;
+}
+
+.zhang p{
+	margin: 5px 30px;
+	color: #555;
+}
+.box{
+	margin: 30px;
+}
+h4{
+	margin:5px 30px;
+	color: #666;
+}
