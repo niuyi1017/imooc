@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>太萌搜索</title>
+		<link rel="stylesheet" type="text/css" href="css/mySearch.css"/>
+	</head>
+	<body>
+		<div class="bg-img">
+			<div class="mask"></div>
+			
+			<div class="searchBox">
+				<div class="logo"><img src="img/logo.png"/></div>
+				<form action="" method="post">
+					<input type="text" name="" id="searchInput"  />	
+					<!--<input type="submit" value="" id="searchBtn"/>-->
+					<div id="searchBtn"><img src="img/search.png"/></div>
+				</form>
+			</div>
+			
+			
+			
+		</div>
+		
+		<ul id="suggest">
+			<li>测试数据</li>
+			<li>测试数据</li>
+			<li>测试数据</li>
+		</ul>
+		
+		
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#searchInput").bind("keyup",function(){
+//					$('#suggest').slideDown(300);
+					
+					var inputText = $("#searchInput").val();
+					if(inputText==''){
+						$('#suggest').slideUp(300)
+						
+					}else{
+						var box= $(".searchBox");
+						var mytop = box.offset().top;
+						var myleft = $("form").offset().left;
+						
+						
+						$('#suggest').slideDown(300).css({
+						top:mytop+48,
+						left:myleft
+							
+						});
+					}
+					
+					$.ajax({  
+                type: "get",  
+                async: true,  
+                url: "http://api.bing.com/qsonhs.aspx?type=cb&q=" + inputText,  
+                dataType: "jsonp",  
+                jsonp: "cb",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)  
+               jsonpCallback:"callback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据  
+                success: function (data) {  
+//                  callback(data);
+                    var d = data.AS.Results[0].Suggests;
+                    
+                   var html = "";
+                   for (var i = 0;i<d.length;i++){
+                   	html +="<li>"+ d[i].Txt +"</li>";  
+                   	
+                   }
+                   
+                   $("#suggest").html(html);
+                },  
+                error: function (data) {  
+                    console.log(data);  
+                }  
+            });  
+					
+					
+				});
+				
+				$("#searchBtn").click(function(){
+					location.href = 'http://cn.bing.com/search?q='+$("#searchInput").val(); 
+				})
+				
+				$(document).delegate("li",'click',function(){
+					
+					var kewWords = $(this).text();
+					location.href = 'http://cn.bing.com/search?q='+kewWords; 
+					
+				})
+				$(document).click(function(){
+					$('#suggest').slideUp(300);
+				});
+				
+				$("#searchInput").focus(function(){
+					$(".mask").fadeIn(300);
+					$("form").addClass("f")
+					
+				});
+				
+				$("#searchInput").blur(function(){
+					$(".mask").fadeOut(300);
+					$("form").removeClass('f');
+					
+				});
+				
+			});
+		</script>
+	</body>
+</html>

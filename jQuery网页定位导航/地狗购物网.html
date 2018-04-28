@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>地狗购物网——网页定位导航效果</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #content {
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #content h1 {
+            color: #0088bb;
+        }
+
+        #content .item {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px dotted #0088bb;
+        }
+
+        #content .item h2 {
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 2px solid #0088bb;
+            margin-bottom: 10px;
+        }
+
+        #content .item li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        #content .item li a img {
+            width: 230px;
+            height: 230px;
+            border: none;
+        }
+
+        #menu {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            margin-left: 400px;
+            width: 80px;
+        }
+
+        #menu ul li a {
+            display: block;
+            margin: 5px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            width: 80px;
+            height: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        #menu ul li a:hover,
+        #menu ul li a.current {
+            color: #fff;
+            background: #0088bb;
+        }
+
+        /*ie6 hack*/
+        * html, * html body {
+            background-image: url(about:blank);
+            background-attachment: fixed;
+        }
+
+        * html #menu {
+            /*position: fixed;*/
+            position: absolute;
+            top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
+        }
+
+</style>
+<script>
+    
+  //定义getByClassName函数，让函数实现根据class name获取对象并返回
+
+	
+	function hasClass( obj, cls ){ 
+	    return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+	}
+	
+	function removeClass( obj, cls ){ 
+	    if( hasClass( obj, cls )){ 
+		    //remove
+			var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
+			obj.className = obj.className.replace(reg, "");
+		}
+	}
+	
+	function addClass(obj,cls){
+	    if(!hasClass(obj,cls)){
+	        obj.className = " "+cls;
+	    }
+	}
+	
+	
+    //定义getByClassName函数，让函数实现给对象增加class 
+    
+    function getByClassName(obj,cls){
+        var elements = obj.getElementsByTagName("*");
+        var result = [];
+        
+        for(var i = 0;i<elements.length;i++){
+            if(elements[i].className == cls){
+                result.push(elements[i]);
+            }
+        }
+        return result;
+    }
+    
+	
+	window.onload = function(){ 
+		
+	    window.onscroll = function(){ 		
+		    var top = document.documentElement.scrollTop? document.documentElement.scrollTop : document.body.scrollTop;
+			
+			var menus = document.getElementById("menu").getElementsByTagName("a");
+			
+			var items = getByClassName(document.getElementById("content"), "item");
+			
+			var currentId = "";
+			
+			for ( var i=0; i< items.length; i++ ){ 
+			    var _item = items[i];
+			    var _itemTop = _item.offsetTop;
+				if( top > _itemTop - 200 ){ 
+				    currentId = _item.id;
+				} else { 
+				    break;
+				}			
+			}
+		
+			 				
+      //请补充此处代码，给正确的menu下的a元素class赋值current
+            if(currentId){
+                
+                for(var j = 0;j<menus.length;j++){
+                    
+                    var _menu = menus[j];
+                    var _href = _menu.href.split('#');
+                    
+                    
+                    if(_href[_href.length-1] != currentId){
+                        removeClass(_menu,"current");
+                    }else{
+                        addClass(_menu,"current");
+                    }
+                }
+            }
+      
+	
+		}	
+	}	
+</script>
+</head>
+<body>
+<div id="menu">
+<ul>
+<!--运用锚点，实现导航定位。-->
+
+
+<li><a href="#item1" class="current">1F 男装</a></li>
+<li><a href="#item2">2F 女装</a></li>
+<li><a href="#item3">3F 美妆</a></li>
+<li><a href="#item4">4F 数码</a></li>
+<li><a href="#item5">5F 母婴</a></li>
+</ul>
+</div>
+<div id="content">
+<h1>地狗购物网</h1>
+
+<div id="item1" class="item">
+<h2>1F 男装</h2>
+<ul>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt=""/></a></li>
+</ul>
+</div>
+<div id="item2" class="item">
+<h2>2F 女装</h2>
+<ul>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt=""/></a></li>
+</ul>
+</div>
+<div id="item3" class="item">
+<h2>3F 美妆</h2>
+<ul>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt=""/></a></li>
+</ul>
+</div>
+<div id="item4" class="item">
+<h2>4F 数码</h2>
+<ul>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt=""/></a></li>
+</ul>
+</div>
+<div id="item5" class="item">
+<h2>5F 母婴</h2>
+<ul>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+<li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt=""/></a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>

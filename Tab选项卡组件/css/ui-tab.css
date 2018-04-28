@@ -1,0 +1,100 @@
+*{
+	/*margin:0;*/
+	padding: 0;
+	
+}
+body{
+	background: #FFFFFF;
+	font-size: 26px;
+	font-family: "微软雅黑";
+	padding: 30px;
+	
+}
+.ui-tab-wraper{
+	width: 500px;
+}
+.ui-tab-nav{
+	list-style: none;
+	height: 40px;
+	
+	border: 1px solid #1ABC9C;
+	background: #1ABC9C;
+	padding: 3px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px #1ABC9C;
+	transition: all 0.2s;
+	
+}
+
+.ui-tab-nav:hover{
+	box-shadow: 2px 2px 30px #1ABC9C;
+}
+.ui-tab-nav .ui-tab-nav-actived {
+	/*background: #1abc9c;*/
+	/*color: #767676;*/
+	text-shadow: 3px 3px 10px rgba(0,0,0,.9);
+	
+}
+
+.ui-tab-nav .ui-tab-nav-actived a{
+	color: #FFFFFF;
+	border-bottom: 5px solid #FFFFFF;
+	/*border-right: 5px solid #1ABC9C;
+	border-left: 5px solid #1ABC9C;*/
+	border-radius: 0px;
+}
+
+.ui-tab-nav li{
+	display: inline-block;
+	height: 40px;
+	margin-left: 40px;
+	
+	border: 1px  solid #1ABC9C;
+	border-bottom: 0;
+	
+}
+.ui-tab-nav li:hover a{
+	/*border-bottom: 0px solid #fff;*/
+	/*font-size: 25px;*/
+	text-shadow: 3px 3px 10px rgba(0,0,0,.9);
+	color: #FFFFFF;
+	transform: rotate(360deg) scale(1.1);
+	
+}
+
+.ui-tab-nav .ui-tab-nav-actived:hover a{
+	transform: rotate(0);
+}
+.ui-tab-nav li a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #EEEEEE;
+	transition: all 0.3s;
+	
+}
+.ui-tab-content-wrap{
+	height: 300px;
+	background: #f0f0f0;
+	padding: 5px 5px 5px 5px;
+	box-shadow: 2px 2px 20px 2px rgba(128,128,128,.95);
+	border-radius: 5px 5px 5px 5px;
+	transition: all .2s;
+}
+.ui-tab-content-wrap:hover{
+	box-shadow: 2px 2px 30px 2px rgba(128,128,128,.95);
+}
+.ui-tab-content-wrap .current{
+	display: block;
+}
+.ui-tab-content-item {
+	display: none;
+	position: absolute;
+}
+.ui-tab-content-wrap .ui-tab-content-item img{
+	height: 300px;
+	width: 490px;
+	border-radius:  3px ;
+}

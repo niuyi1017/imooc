@@ -1,0 +1,108 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+
+body{
+	
+	background-image: url(../img/55d417c5c0cb6.jpg);
+	
+	overflow: hidden;
+}
+.mask{
+	height: 1000px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.25);
+	display: none;
+}
+
+.f{
+	box-shadow: 0 0 20px #FFFFFF;
+}
+
+.searchBox{
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	width: 600px;
+	margin-left: -300px;
+}
+.logo{
+	float: left;
+	margin-right: 20px;
+	position: absolute;
+	margin-top: -25px;
+}
+.logo img{
+	height: 100px;
+	width: 100px;
+	
+}
+.searchBox form{
+	height: 35px;
+	width: 500px;
+	background: #FFFFFF;
+	padding: 5px;
+	border-radius: 5px;
+	float: left;
+	position: absolute;
+	margin-left: 150px;
+	
+}
+.searchBox form #searchInput{
+	
+	height: 30px;
+	line-height: 30px;
+	width: 400px;
+	border: none;
+	outline: none;
+	padding-left: 5px;
+	margin-right: 40px;
+	float: left;
+	color: #666;
+	font-size: 18px;
+	
+	
+}
+
+#searchBtn{
+	background: #FFFFFF;
+	border: none;
+	height: 30px;
+	width: 30px;
+	float: left;
+}
+
+#searchBtn img{
+	height: 30px;
+	width: 30px;
+}
+
+#searchBtn:hover img{
+	height: 31px;
+	width: 31px;
+}
+#suggest{
+	list-style: none;
+	width: 510px;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	/*top: 248px;*/
+	left: 630px;
+	border-radius: 4px;
+	overflow: hidden;
+	display: none;
+	
+}
+#suggest li{
+	padding: 10px 20px;
+	color: #FFFFFF;
+	
+}
+#suggest li:hover{
+	background: rgba(255,255,255,0.4);
+	text-decoration: underline;
+	cursor: pointer;
+}
+

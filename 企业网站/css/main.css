@@ -1,0 +1,406 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #EEEEEE;
+}
+.top{
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid #999;
+	background: #DDDDDD;
+}
+.topContent{
+	width: 1000px;
+	height: 30px;
+	margin: 0 auto;
+	
+}
+.topContent ul{
+	float: right;
+	margin-right: 20px;
+}
+.topContent li{
+	display: inline-block;
+	list-style: none;
+	
+	line-height: 30px;
+	font-size: 12px;
+	margin-right: 5px;
+	
+}
+.topContent li a{
+	text-decoration: none;
+	color: #666;
+}
+.topContent li a:active,.topContent li a:hover{
+	color: red;
+	
+}
+.wrap{
+	width: 1000px;
+	margin: 0 auto;
+	
+}
+.logo{
+	height: 80px;
+	background: #FFFFFF;
+	
+}
+.logoLeft{
+	
+	height: 80px;
+	float: left;
+}
+#logo{
+	display: block;
+	height: 60px;
+	width: 300px;
+	/*background: aqua;*/
+	font-size: 30px;
+	text-align: center;
+	line-height: 90px;
+	color: #008B8B;
+	text-shadow: -5px 5px 10px #2E8B57;
+	font-weight: bolder;
+	padding: 0 10px;
+}
+#logo .fa{
+	font-size:55px ;
+}
+.logoRight{
+	height: 80px;
+	float: right;
+}
+#logoR{
+	display: block;
+	height: 80px;
+	width: 300px;
+	/*background: aqua;*/
+	font-size: 18px;
+	text-align: center;
+	line-height: 90px;
+	color: #008B8B;
+	text-shadow: -5px 5px 10px #2E8B57;
+	font-weight: bolder;
+	padding: 0 10px;
+}
+
+#logoR .fa{
+	font-size:30px ;
+}
+.nav{
+	height: 60px;
+	background: darkcyan;
+	
+	box-shadow: 0 3px 3px #333;
+	border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.nav ul{
+	float: left;
+	margin-left: 80px;
+}
+.nav ul li{
+	list-style: none;
+	display: inline-block;
+	line-height: 60px;
+	margin-right: 10px;
+
+}
+.nav li a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.nav li a:active,.nav li a:hover{
+	color: orangered;
+	text-decoration: underline;
+	
+}
+.nav form{
+	float: right;
+	margin-right: 50px;
+	
+}
+.nav form input{
+	width: 200px;
+	height: 25px;
+	
+	margin-right: 10px;
+	border: 0 ;
+}
+.nav .fa{
+	
+	color: orangered;
+	font-size: 20px;
+	line-height: 60px;
+	width: 20px;
+}
+.ad{
+	height: 310px;
+	padding: 0;
+	width: 999px;
+	overflow: hidden;
+	margin-top: 25px;
+	box-shadow: 0 0px 40px #000;
+	border-radius: 10px;
+}
+
+.display{
+	margin-top: 40px ;
+	box-shadow: 0 20px 50px #fff;
+	height: 250px;
+}
+.display .news{
+	width: 340px;
+	height: 250px;
+	
+	background: #008B8B;
+	box-shadow: 0 0 20px #FFFFFF;
+	border-radius: 10px;
+	overflow: hidden;
+	float: left;
+	transition: all 0.3s;
+	}
+.display .news:hover,.display .courses:hover,.display .sideBar:hover{
+	margin-top: -10px;
+	box-shadow: 10px 10px 20px #333;
+}
+	
+.display .news .title{
+	height: 35px;
+	background: #fff;
+	border-bottom: 1px solid seagreen;
+	
+}
+.display .news .title h2{
+	display: inline-block;
+	line-height: 35px;
+	font-size: 16px;
+	width: 100px;
+	margin-left: 10px;
+	color: #008B8B;
+}
+#more{
+	float: right;
+	line-height: 35px;
+	margin-right: 20px;
+}
+.news #more a{
+	text-decoration: none;
+	color: #008B8B;
+}
+#more a:hover{
+	color: orangered;
+}
+
+.news .picNews{
+	height: 100px;
+	margin-top: 5px;
+}
+.news .picNews img{
+	float: left;
+	margin:10px 10px;
+}
+.news .picNews h3{
+	padding: 20px 0 10px 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+.news .picNews p{
+	font-size: 14px;
+	line-height: 20px;
+	color: #EEEEEE;
+	
+}
+.news ul{
+	margin:10px;
+}
+.news ul li{
+	list-style: none;
+	line-height: 25px;
+}
+.news ul li a{
+	display: inline-block;
+	margin: 0 30px 0 15px;
+	color: #EEEEEE;
+	text-decoration: none;
+}
+.news ul li i{
+	color: #FFFFFF;
+	font-size: 14px;
+}
+.display .courses{
+	height: 250px;
+	width: 410px;
+	float: left;
+	margin: 0 10px;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #008B8B;
+	/*box-shadow: 0 0 10px #008B8B;*/
+	transition: all 0.3s;
+}
+.display .courses .title h2{
+	display: inline-block;
+	line-height: 35px;
+	font-size: 16px;
+	width: 100px;
+	margin-left: 10px;
+	color: #008B8B;
+}
+.display .courses .title #more a{
+	color: #008B8B;
+	text-decoration: none;
+}
+.display .courses .title #more a:hover{
+	color: orangered;
+}
+.display .courses .title{
+	height: 35px;
+	background: #FFFFFF;
+	border-bottom: 1px solid seagreen;
+	
+}
+.display .courses .picNews{
+	margin:10px;
+	
+}
+.display .courses .picNews img{
+	float: left;
+	margin-right: 20px;
+}
+.display .courses .picNews h3{
+	font-size: 16px;
+	padding: 10px;
+	color: #FFFFFF;
+}
+.display .courses .picNews p{
+	color: #EEEEEE;
+	font-size: 14px;
+	padding-top: 20px;
+}
+.display .courses .coursesList{
+	margin: 40px;
+	/*margin: 60px 0 0 0 ;*/
+}
+
+
+.display .courses .coursesList ul{
+	border: 1px solid #FFFFFF;
+	padding:  1px 11px;
+	background: #008B8B;
+	border-radius: 5px;
+}
+
+.display .courses .coursesList ul li{
+	list-style: none;
+	display: inline-block;
+	margin: 10px;
+}
+.display .courses .coursesList ul li a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.display .courses .coursesList ul li a:hover {
+	color: orangered;
+}
+.display .sideBar{
+	height: 250px;
+	width: 230px;
+	float: left;
+	background: #008B8B;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #FFFFFF;
+	transition: all 0.3s;
+	overflow: hidden;
+}
+.display .sideBar .title{
+	height: 35px;
+	background: #FFFFFF;
+	border-bottom: 1px solid seagreen;
+	
+}
+.display .sideBar .title h2{
+	display: inline-block;
+	line-height: 35px;
+	font-size: 16px;
+	width: 100px;
+	margin-left: 10px;
+	color: #008B8B;
+}
+.display .sideBar  #more{
+	float: right;
+	line-height: 35px;
+	margin-right: 20px;
+}
+.sideBar #more a{
+	text-decoration: none;
+	color: #008B8B;
+}
+.sideBar #more a:hover{
+	color: orangered;
+}
+
+.sideBar #recommend{
+	width: 230px;
+	height: 60px;
+	margin-top: 2px;
+}
+.copyRight{
+	width: 100%;
+	height: 200px;
+	background: #666;
+	margin-top: 40px;
+	/*position: absolute;
+	bottom: 0;*/
+}
+.copyContent{
+	width: 1000px;
+	margin: 0 auto;
+	
+}
+.copyContent ul{
+	
+}
+.copyContent ul li{
+	list-style: none;
+	display: inline-block;
+	width: 190px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.copyContent ul li a{
+	color: #ccc;
+	text-decoration: none;
+	font-weight: bold;
+}
+.copyContent ul li a:hover{
+	color: #FFFFFF;
+}
+.copyContent ul li ul li a{
+	font-weight: 100;
+	color: #999;
+}
+.copyContent ul{
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+.copyContent ul li ul{
+	margin-top: 0px;
+}
+.copyContent ul li i{
+	color: #999999;
+}
+.copyContent ul li i:hover{
+	color: #2E8B57;
+}
+.copyContent ul li ul{
+	height: 120px;
+	border-right: 2px solid #999;
+}
+
