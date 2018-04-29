@@ -13,7 +13,27 @@
 		"triggerType":"click",
 		"effect":"fade",
 		"invoke":2,
-		"auto":5000
+		"auto":2000
+	}'>
+		<ul class="ui-tab-nav">
+			<li class="ui-tab-nav-actived"><a href="#"><i class="fa fa-eercast"></i></a></li>
+			<li><a href="#"><i class=" fa fa-wpexplorer"></i></a></li>
+			<li><a href="#"><i class="fa fa-superpowers"></i></a></li>
+			<li><a href="#"><i class="fa fa-podcast"></i></a></li>
+		</ul>
+		<div class="ui-tab-content-wrap">
+			<div class="ui-tab-content-item current"><img src="img/1.jpg"/></div>
+			<div class="ui-tab-content-item"><img src="img/2.jpg"/></div>
+			<div class="ui-tab-content-item"><img src="img/3.jpg"/></div>
+			<div class="ui-tab-content-item"><img src="img/4.jpg"/></div>
+		</div>
+	</div>
+	
+	<div class="ui-tab-wraper js-tab" data-config = '{
+		"triggerType":"click",
+		"effect":"fade",
+		"invoke":2,
+		"auto":2000
 	}'>
 		<ul class="ui-tab-nav">
 			<li class="ui-tab-nav-actived"><a href="#"><i class="fa fa-eercast"></i></a></li>
@@ -30,7 +50,10 @@
 	</div>
 	<script type="text/javascript">
 		$(function(){
-			var tab = new Tab($(".js-tab").eq(0));
+//			Tab.init($(".js-tab"));
+
+			$(".js-tab").tab();
+			
 		});
 	</script>
 	</body>
