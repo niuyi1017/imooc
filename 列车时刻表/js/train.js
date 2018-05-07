@@ -1,7 +1,7 @@
 var urlPre = "https://crossorigin.me/";
-var url1 = "https://ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeByStationName?UserID=";
-var url2 = "https://ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeDataSetByTrainCode?UserID=";
-var url3 = "https://ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?&UserID=";
+var url1 = "ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeByStationName?UserID=";
+var url2 = "ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeDataSetByTrainCode?UserID=";
+var url3 = "ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?&UserID=";
 
 
 var getTrainList = function(){
