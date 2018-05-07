@@ -39,7 +39,7 @@
 
 [幽灵按钮](幽灵按钮/index.html)   
 
-[仿必应搜索框](搜索框/index.html) 
+[仿必应搜索框](搜索框/mySearch.html) 
 
 [果冻特效](果冻特效/index.html) 
 
