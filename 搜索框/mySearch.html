@@ -55,7 +55,7 @@
 					$.ajax({  
                 type: "get",  
                 async: true,  
-                url: "http://api.bing.com/qsonhs.aspx?type=cb&q=" + inputText,  
+                url: "https://api.bing.com/qsonhs.aspx?type=cb&q=" + inputText,  
                 dataType: "jsonp",  
                 jsonp: "cb",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)  
                jsonpCallback:"callback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据  
