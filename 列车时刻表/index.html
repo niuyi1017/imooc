@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no,width = device-width"/>
+    <title>列车时刻表</title>
+    <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.css"/>
+   
+</head>
+<body>
+	<div data-role = "page" class="index" id="index">
+		
+		<div data-role = "header" data-position = "fixed">
+			<h1>列车时刻查询</h1>
+		</div>
+		<div role = "main" class="ui-content">
+			<form>
+				<div class="ui-field-contain">
+					<label for="">出发站</label>
+					<input type="text" id="startStation" value="" />
+				</div>
+				<div class="ui-field-contain">
+					<label for="">到达站</label>
+					<input type="text" id="endStation" value="" />
+				</div>
+				<div class="ui-field-contain">
+					<label for="">车次</label>
+					<input type="text" id="trainNo" value="" />
+				</div>
+				<input type="button" id = "search" value="查询"/>
+				
+				
+			</form>
+			
+			
+			<ul data-role = "listview" data-inset = "true" id = "list">
+				
+			</ul>
+			
+			
+			
+		</div>
+		<div data-role = "footer" data-position = "fixed">
+			<div data-role = "navbar">
+				<ul>
+					<li><a href="#" data-icon = "calendar" class="ui-btn-active">查询</a></li>
+					<li><a href="#" data-icon = "star">收藏</a></li>
+					<li><a href="#" data-icon = "user">我的</a></li>
+				</ul>
+				
+			</div>
+		</div>
+		
+	</div>
+	<div data-role = "page" id = "detail">
+		<div data-role = "header" data-position = "fixed">
+			<h1>车次详情</h1>
+		</div>
+		<div data-role = "main" class="ui-content">
+			<h2>车次</h2>
+			<table data-role="table" data-mode="reflow" class="ui-responsive table-stroke">
+				<thead>
+					<tr>
+						<th data-priority="1">站名</th>
+						<th data-priority="1">到达时间</th>
+						<th data-priority="1">出发时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+			<a href="#index" class="ui-btn ui-corner-all">返回</a>
+		</div>
+		<div data-role = "footer" data-position = "fixed">
+			<div data-role = "navbar">
+				<ul>
+					<li><a href="#" data-icon = "calendar">查询</a></li>
+					<li><a href="#" data-icon = "star">收藏</a></li>
+					<li><a href="#" data-icon = "user">我的</a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/train.js" type="text/javascript" charset="utf-8"></script>
+	
+</body>
+</html>
