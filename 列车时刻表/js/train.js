@@ -1,4 +1,4 @@
-var urlPre = "https://crossorigin.me/";
+var urlPre = "http://crossorigin.me/";
 
 var url1 = "http://ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeByStationName?UserID=";
 var url2 = "http://ws.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeDataSetByTrainCode?UserID=";
