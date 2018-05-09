@@ -1,11 +1,5 @@
 ---
 layout: default
-title: 慕课网学习Demo
-date: 2018-04-22
-categories: Demo
-tags: 慕课网 Demo
-author: 牛一 
-
 ---  
 
 
