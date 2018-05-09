@@ -1,8 +1,3 @@
----
-layout: default
----  
-
-
 # imooc
 慕课网学习demo  
 
