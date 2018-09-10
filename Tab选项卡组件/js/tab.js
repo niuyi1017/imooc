@@ -47,13 +47,13 @@
 			this.invoke(this.tabItems.eq(config.invoke-1));
 		}
 		
-		console.log(this.config);
+		
 		
 	}
 	Tab.prototype = {
 		getConfig :function(){
 			var config = this.tab.attr("data-config");
-			console.log(config);
+			
 			if(config&&config!=""){
 				return $.parseJSON(config);
 			}else{
