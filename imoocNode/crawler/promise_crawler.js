@@ -10,12 +10,12 @@ function filterChapter(page) {
     
     const $ = cheerio.load(page.html)
     const chapters = $('.chapter')
-    var title = $('.course-infos h2').text()
-    var number = page.Lnumber
+    let title = $('.course-infos h2').text()
+    let number = page.Lnumber
     
     
 
-    var courseData = {
+    let courseData = {
         title,
         number,
         videos:[]
@@ -26,17 +26,17 @@ function filterChapter(page) {
 
 
     chapters.each(function () {
-        var chapter = $(this)
-        var chapterTitle = chapter.find('h3').text()
-        var videos = chapter.find('.video').children('li')
-        var chapterData = {
+        let chapter = $(this)
+        let chapterTitle = chapter.find('h3').text()
+        let videos = chapter.find('.video').children('li')
+        let chapterData = {
             chapterTitle,
             videos: []
         }
         videos.each(function () {
-            var video = $(this).find('.J-media-item')
-            var videoTitle = video.text().trim().split('(')[0]
-            var id = video.attr('href').split('video/')[1]
+            let video = $(this).find('.J-media-item')
+            let videoTitle = video.text().trim().split('(')[0]
+            let id = video.attr('href').split('video/')[1]
             chapterData.videos.push({
                 title: videoTitle,
                 id
@@ -63,7 +63,7 @@ function printCourseInfo(coursesData) {
         console.log('                           ' + courseData.title + '                               \n')
         console.log('----------------------------------------------------------------------------------\n')
         courseData.videos.forEach(item =>{
-            var chapterTitle = item.chapterTitle
+            let chapterTitle = item.chapterTitle
             console.log( chapterTitle + '\n')
             item.videos.forEach(video => {
                 console.log('【id ' + video.id + '】' + video.title)
@@ -77,12 +77,12 @@ function getPageAsync(id) {
     
     return new Promise((resolve, reject) => {
        
-        var url = baseUrl+id
+        let url = baseUrl+id
         
         console.log('正在爬取' + url +'\n')
 
         let Lnumber = 0;
-        var html = ''
+        let html = ''
         getNumber(id).then(number => {
             Lnumber = number
 
@@ -111,7 +111,7 @@ function getNumber(id) {
 
 
         https.get(numberBaseUrl + id, res => {
-            var number = ''
+            let number = ''
             res.on('data', data => {
                 number += data
                 number = JSON.parse(number).data[0].numbers
@@ -128,17 +128,17 @@ function getNumber(id) {
 }
 
 
-var fetchCourseArray = []
+let fetchCourseArray = []
 videosIds.forEach(id =>{
     fetchCourseArray.push(getPageAsync(id))
 })
 
 Promise.all(fetchCourseArray)
         .then((pages) =>{
-            var coursesData = []
+            let coursesData = []
            
             pages.forEach(page => {
-                var courses = filterChapter(page)
+                let courses = filterChapter(page)
                 coursesData.push(courses) 
             })
             coursesData.sort((a,b) =>{
