@@ -1,0 +1,77 @@
+body{
+	background: #FFFFFF;
+}
+.logo{
+	color: #1c2438;
+	font-weight: bold;
+	font-size: 30px;
+	font-family: "courier new";
+}
+.navbar-text{
+	
+}
+.content{
+	margin-top: 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius:10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	-webkit-box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.info{
+	/*background: #fa5d5d;*/
+	
+	padding: 20px;
+	
+}
+.headline{
+	font-family: "楷体";
+	font-size: 50px;
+	letter-spacing: 10px;
+	color:#FA5D5D;
+	font-weight: bold;
+}
+
+.btnact{
+	
+	
+	background: #FA5D5D;
+	color: #FFFFFF;
+	border: 1px solid;
+}
+.btnnoact{
+	
+	background: #F8F8F9;
+	color: #FA5D5D;
+	border: 1px solid;
+}
+.mybtn2{
+	border-radius: 20px;
+}
+.btnact:hover{
+	background: #FA5D5D;
+	color: #FFFFFF;
+	border: 1px solid;
+}
+.btnnoact:hover{
+	background: #FA5D5D;
+	color: #FFFFFF;
+	border: 1px solid;
+}
+.countdown{
+	/*border: 2px solid #FA5D5D;*/
+	border-radius: 0 10px 10px 0;
+	margin-top: 8%;
+	
+}
+#day{
+	height: 170px;
+	width: 200px;
+	margin-left:20%;
+}
+.footer{
+	margin: 40px 80px 0px 80px;
+	padding: 0px 80px 0px 80px;
+	
+}
