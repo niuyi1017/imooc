@@ -2,7 +2,7 @@ body{
 	background: #FFFFFF;
 }
 .logo{
-	color: #1c2438;
+	/*color: #ccc;*/
 	font-weight: bold;
 	font-size: 30px;
 	font-family: "courier new";
@@ -12,6 +12,7 @@ body{
 }
 .content{
 	margin-top: 10px;
+	padding: 12px;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-moz-border-radius:10px 10px 10px 10px;
 	border-radius: 10px 10px 10px 10px;

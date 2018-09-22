@@ -21,7 +21,7 @@ window.onload = function(){
 	
 	MARGIN_TOP = Math.round(WINDOW_HEIGHT/12)
 	var day = document.getElementById('day');
-	D_RADIUS = Math.round(day.offsetWidth*4/5/35);
+	D_RADIUS = Math.round(day.offsetWidth*4/5/30);
 	console.log(D_RADIUS)
 	var canvas = document.getElementById('canvas')
 	var context = canvas.getContext('2d')
