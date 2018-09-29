@@ -40,8 +40,7 @@
 
 [幽灵按钮](幽灵按钮/index.html)   
 
-[仿必应搜索框](搜索框/mySearch.html) 
-
+[仿必应搜索框](搜索框/mySearch.html) [仿必淘宝搜索框css版](搜索框/search4TB.html)  [仿必淘宝搜索框js版](搜索框/search4TBjs.html)  
 [果冻特效](果冻特效/index.html) 
 
 [瀑布流布局](瀑布流布局/index.html) 
