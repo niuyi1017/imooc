@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>仿淘宝搜索框</title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/search4TBjs.css"/>
+	</head>
+	<body>
+		<div class="search-container">
+			<div class="search-list" id="search-list">
+				<ul>
+					<li ><a href="#">宝贝</a> </li>
+					<li><a href="#">店铺</a></li>
+				</ul>
+			</div>
+			<div class="search-pannel">
+				<form action="#" method="post">
+					<div class="search-tips">
+						<a href="#">高级<br>搜索</a>
+						<input class="btn" type="submit" value="搜索"/>
+					</div>
+					<div class="search-common">
+						<input type="text" name="" id="input" value="" />
+						<i class="fa fa-search fa-2x icon"></i>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var searchList = $('#search-list');
+				var items = $('#search-list ul li');
+				searchList.mouseover(function(){
+					var $this = $(this);
+					$this.height(68)
+				})
+				searchList.mouseout(function(){
+					var $this = $(this);
+					$this.height(34)
+				})
+				$(items[0]).click(function(){
+					
+					if(searchList.height() == 68){
+						searchList.height(34)
+					}else{
+						searchList.height(68)
+					}
+				})
+				$(items[1]).click(function(){
+					var temp = $(items[1]).html();
+					$(items[1]).html($(items[0]).html())
+					$(items[0]).html(temp);
+				})
+				
+			})
+		</script>
+	</body>
+</html>
