@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>下拉框定位二三事</title>
+<style>
+body { margin: 0; font: 14px/1.4 "Microsoft YaHei"; background-color: #EDEFF0; }
+.constr { width: 1200px; max-width: 80%; margin-left: auto; margin-right: auto; padding-bottom: 300px; overflow: hidden; }
+.course-sidebar { width: 262px; float: left; }
+.course-sidebar > div { border: 1px solid #e6e8e9; box-shadow: 0px 1px 2px #d5d7d8; background-color: #fff; }
+.course-sidebar-type { height: 380px; }
+.course-sidebar-search { margin-top: 20px; overflow: hidden; }
+.course-search-input { width: 200px; line-height: 18px; padding: 10px; margin: 0; border: 0 none; font-size: 12px; font-family: inherit; float: left; }
+.course-sidebar-search.focus { border-color: #2ea7e0; }
+.course-search-input:focus { outline: 0 none; }
+.course-search-input::-ms-clear { display: none; }
+.course-search-btn { width: 38px; height: 38px; float: right; background: url(http://img.mukewang.com/545305ba0001f3f600380076.png); text-indent: -9em; overflow: hidden; }
+.focus .course-search-btn { background-position: 0 -38px; }
+
+.course-sidebar-result { display: none; position: absolute; width: 260px; margin: 39px 0 0 -1px; padding-left: 0; list-style-type: none; border: 1px solid #e6e8e9; background-color: #fff; box-shadow: 0px 1px 2px #d5d7d8; font-size: 12px; }
+.course-sidebar-result > li { line-height: 30px; padding-left: 12px; }
+.course-sidebar-result > li:hover { background-color: #f9f9f9; }
+.course-sidebar-result a { display: block; color: #5e5e5e; text-decoration: none; }
+.course-sidebar-result a:hover { color: #000; }
+</style>
+</head>
+
+<body>
+<div class="constr">
+    <div class="course-sidebar">
+    	<div class="course-sidebar-type"></div>
+        <div class="course-sidebar-search">
+        	<ul id="result" class="course-sidebar-result">
+            	<li><a href="http://www.imooc.com/view/121">分享：CSS深入理解之float浮动</a></li>
+                <li><a href="http://www.imooc.com/view/118">案例：CSS圆角进化论</a></li>
+                <li><a href="http://www.imooc.com/view/93">案例：CSS Sprite雪碧图应用</a></li>
+                <li><a href="http://www.imooc.com/view/77">案例：CSS3 3D 特效</a></li>
+                <li><a href="http://www.imooc.com/view/57">案例：如何用CSS进行网页布局</a></li>
+            </ul>
+        	<input class="course-search-input" placeholder="课程搜索">
+            <a href="javascript:" class="course-search-btn">搜索</a>
+        </div>
+    </div>
+</div>
+<script>
+(function() {
+	var input = document.getElementsByTagName("input")[0],
+	    result = document.getElementById("result");
+		
+	if (input && result) {
+		input.onfocus = function() {
+			this.parentNode.className = "course-sidebar-search focus";
+			if (this.value != "") {
+				// show datalist
+				result.style.display = "block";
+			}
+		};
+		input.onblur = function() {
+			if (this.value == "") {
+				this.parentNode.className = "course-sidebar-search";
+			}
+			// hide datalist
+			result.style.display = "none";
+		};
+		
+		// IE7 that wrap a DIV for avoid bad effect from float
+		if (!document.querySelector) {
+			var div = document.createElement("div");
+			input.parentNode.insertBefore(div, input);
+			div.appendChild(result);
+		}
+		// events of datalist
+		if ("oninput" in input) {
+			input.addEventListener("input", function() {
+				if (this.value.trim() != "") {
+					result.style.display = "block";
+				} else {
+					result.style.display = "none";
+				}
+			});
+		} else {
+		    // IE6-IE8
+			input.onpropertychange = function(event) {
+				event = event || window.event;
+				if (event.propertyName == "value" && /focus/.test(this.parentNode.className)) {
+					if (this.value != "") {
+						result.style.display = "block";
+					} else {
+						result.style.display = "none";
+					}
+				}
+			}
+		}
+	}
+
+})();
+</script>
+</body>
+</html>

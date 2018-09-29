@@ -1,6 +1,29 @@
 body{
 	background: #FFFFFF;
 }
+.wrapper{
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+nav{
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 60px;
+	top: 10px;
+	margin-bottom: 20px;
+}
+.footer{
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 40px;
+	bottom: 0;
+}
+
 .logo{
 	/*color: #ccc;*/
 	font-weight: bold;

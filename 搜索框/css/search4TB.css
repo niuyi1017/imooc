@@ -1,0 +1,90 @@
+.search-container{
+	position: relative;
+}
+.search-tips a{
+	color: #666;
+	text-decoration: none;
+	float: right;
+}
+.search-tips .btn{
+	float: right;
+	height: 40px;
+	width: 60px;
+	border: 0;
+	background: #f50;
+	color: #fff;
+	margin-right: 10px;
+}
+.search-common{
+	height: 33px;
+	/*background: #f50;*/
+	overflow: hidden;
+	border: 2px solid #FF5500;
+	padding: 3px 0px 0px 0px;
+}
+#input{
+	height: 28px;
+	line-height: 28px;
+	
+	border: 0;
+	outline: 0;
+	width: 100%;
+	background: #FFFFFF;
+	padding-left: 100px;
+	font-size: 16px;
+}
+.search-common .icon{
+	position: absolute;
+	left: 80px;
+	font-size: 18px;
+	color: #666666;
+	top: 12px;
+}
+.search-list ul{
+	list-style: none;
+}
+.search-list {
+	background: #fff;
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	padding: 0;
+	height: 34px;
+	overflow: hidden;
+	border: 1px solid #DDDDDD;
+	/*transition: all 0.5s;*/
+}
+.search-list:hover{
+	height: 68px;
+	
+}
+.search-list:hover li{
+	display: block;
+}
+.search-list ul{
+	padding: 0;
+	margin: 0;
+}
+.search-list ul li{
+	display: none;
+	height: 34px;
+	line-height: 38px;
+	width: 74px;
+	text-align: center;
+	padding: 0;
+	background: #f9f9f9;
+}
+
+.search-list ul li:hover{
+	background: #ddd;
+	/*height: 34px;*/
+	/*border-right: 1px solid #999;*/
+}
+.search-list ul li a{
+	color: #666;
+	text-decoration: none;
+	font-weight: bold;
+}
+.search-list .select{
+	display: block;
+}
