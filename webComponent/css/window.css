@@ -1,0 +1,92 @@
+.window_boundingBox{
+	position: fixed;
+	border: 1px solid #000;
+	box-shadow: 0 0 12px rgba(0,0,0,0.5);
+	border-radius: 5px;
+	background: #F9F9F9;
+}
+.window-mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.3);
+}
+.window-closeBtn{
+	display: inline-block;
+	height:24px;
+	width: 24px;
+	border-radius: 12px;
+	text-align: center;
+	line-height: 24px;
+	background: tomato;
+	color: #f9f9f9;
+	position: absolute;
+	right: -5px;
+	top: -5px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+	transition: all 0.2s;
+	cursor: pointer;
+}
+.window-closeBtn:hover{
+	transform: scale(1.1) rotate(180deg);
+	
+}
+.window-btn{
+	position: absolute;
+	bottom: 10px;
+	width: 100px;
+	left: 50%;
+	margin-left: -50px;
+	border: 1px solid #333333;
+	background: #FFFFFF;
+	height: 25px;
+	box-shadow: 0 0 2px rgba(0,0,0,0.5);
+	border-radius: 2px;
+	transition: all 0.2s;
+	
+}
+.window-btn:hover{
+	background: #666;
+	color: #FFFFFF;
+}
+.window-head{
+	height: 30px;
+	line-height: 30px;
+	background: #333;
+	color: #fff;
+	text-align: center;
+}
+.window-content{
+	padding: 30px;
+	color: #333333;
+	
+}
+.window-skin-a.window_boundingBox{
+	border: 1px solid skyblue;
+	border-radius: 15px;
+	overflow: hidden;
+	
+}
+.window-skin-a .window-closeBtn{
+	top:4px;
+	right: 4px;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	font-size: 16px;
+}
+.window-skin-a .window-head{
+	background: #4bc19e;
+	color: f0f0f0;
+	font-weight: bold;
+}
+.window-skin-a .window-btn{
+	border: 1px solid #4bc19e;
+    background: #4bc19e;
+    color: #F9F9F9;
+}
+.window-skin-a .window-btn:hover{
+	background: #4bc19ec2;
+}
