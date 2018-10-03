@@ -15,19 +15,19 @@ require(['jquery','window'],function($,w){
 			width:300,
 			height:150,
 			y:50,
-			skinClass:"window-skin-a",
+			skinClass:"window-skin-b",
 			isDraggable:true,
 			dragHandle:".window-head",
 			handler4closeBtn:function(){
 				console.log("handler4closeBtn：closeBtn clicked")
 			},
 			handler4alertBtn:function(){
-				console.log("handler4alertBtn：btn clicked")},
+				console.log("handler4alertBtn：alter btn clicked")},
 		});
 		win.on("alert",function(){
-			console.log("Win on:alert")
+			console.log("Win on:alert btn clicked ")
 		}).on("close",function(){
-			console.log("Win on:close")
+			console.log("Win on:alert close btn clicked")
 		})
 	});
 	
@@ -40,11 +40,11 @@ require(['jquery','window'],function($,w){
 			width:300,
 			height:150,
 			y:50,
-			skinClass:"window-skin-a",
+			skinClass:"window-skin-b",
 			isDraggable:true,
 			dragHandle:".window-head",
 			handler4closeBtn:function(){
-				console.log("handler4closeBtn：closeBtn clicked")
+				console.log("handler4closeBtn：confirm closeBtn clicked")
 			},
 			
 		}).on('confirm',function(){
@@ -69,13 +69,13 @@ require(['jquery','window'],function($,w){
 			dragHandle:".window-head",
 			
 			handler4promptBtn:function(inputValue){
-				console.log("handler4promptBtn："+inputValue)
+				console.log("handler4promptBtn：你输入的值为 "+inputValue)
 			},
 			
 		}).on('confirm',function(){
-			console.log("confirmed!");
+			console.log("prompt confirmed!");
 		}).on('cancel',function(){
-			console.log("canceled!")
+			console.log("prompt canceled!")
 		});
 	});
 	

@@ -133,20 +133,20 @@ define(['widget','jquery','jqueryUI'],function(widget,$,$UI){
 		confirm:function(cfg){
 			$.extend(this.cfg,cfg,{winType:'confirm'});
 			this.render();
-			console.log("alert组件...")
+			console.log("confirm组件...")
 			return this;
 		},
 		prompt:function(cfg){
 			$.extend(this.cfg,cfg,{winType:'prompt'});
 			this.render();
 			this._promptInput.focus();
-			console.log("alert组件...")
+			console.log("prompt组件...")
 			return this;
 		},
 		common:function(cfg){
 			$.extend(this.cfg,cfg,{winType:'common'});
 			this.render();
-			console.log("alert组件...")
+			console.log("common组件...")
 			return this;
 		}
 		

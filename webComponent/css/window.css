@@ -11,7 +11,7 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.5);
 }
 
 
@@ -118,4 +118,34 @@
 }
 .window-skin-a .btn:hover{
 	background: #4bc19ec2;
+}
+.window-skin-b.window_boundingBox{
+	border: 1px solid #EEEEEE;
+	background: #FFFFFF;
+	
+}
+.window-skin-b .window-head{
+	background: #FFFFFF;
+	color: #666666;
+	font-weight: bolder;
+	height: 40px;
+	line-height: 40px;
+	letter-spacing: 2px;
+	box-shadow: 0 1px 20px #cdcdcd
+}
+.window-skin-b .window-content{
+	text-align: center;
+	padding-top: 20px;
+}
+.window-skin-b .btn{
+	border: 1px solid #999;
+    background: #FFFFFF;
+    color: #999;
+    box-shadow: 0 0 10px #EdEdEd
+}
+.window-skin-b .btn:hover{
+	border: 1px solid #999;
+    background: #FFFFFF;
+    color: #333;
+     box-shadow: 0 0 20px #dddddd
 }
