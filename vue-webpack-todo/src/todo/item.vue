@@ -19,7 +19,7 @@ export default {
     },
     methods:{
         deleteTodo(){
-
+            this.$emit('del',this.todo.id)
         }
     }
 }
@@ -34,7 +34,7 @@ export default {
     border-bottom 1px solid rgba(0,0,0,0.06)
     &:hover{
         .destory:after{
-           content:url('../assets/images/round_close_fill.svg');
+           content:url('../assets/images/close.svg');
            
             }
         }
