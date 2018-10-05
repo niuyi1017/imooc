@@ -1,0 +1,98 @@
+<template>
+    <div :class="['todo-item',todo.completed?'completed':'']">
+        <input 
+            type="checkbox"
+            class ="toggle"
+            v-model="todo.completed"
+        >
+        <label>{{todo.content}}</label>
+        <button class = "destory" @click="deleteTodo"></button>
+    </div>
+</template>
+<script>
+export default {
+    props:{
+        todo:{
+            type:Object,
+            required:true,
+        }
+    },
+    methods:{
+        deleteTodo(){
+
+        }
+    }
+}
+</script>
+<style lang="stylus" scoped>
+.todo-item{
+    position relative
+    background-color #ffffff
+    height 45px
+    line-height 45px
+    font-size 24px
+    border-bottom 1px solid rgba(0,0,0,0.06)
+    &:hover{
+        .destory:after{
+           content:url('../assets/images/round_close_fill.svg');
+           
+            }
+        }
+    label{
+        white-space:pre-line
+        word-break break-all
+        padding 15px 60px 15px 15px
+        margin-left 45px
+        line-height 1.2
+        transition color 0.4s
+
+    }
+    &.completed{
+        label{
+            color #d9d9d9
+            text-decoration line-through
+
+        }
+        }
+    }
+.toggle{
+    text-align center
+    width 45px
+    height 45px
+    position absolute
+    top 2px
+    bottom 0
+    maring auto 0
+    border none 
+    appearance none
+    outline none 
+    &:after{
+        content url('../assets/images/radio1.svg')
+
+        }
+    &:checked:after{
+        content url('../assets/images/radio.svg')
+        
+        }
+}
+.destory{
+    position absolute
+    top:0
+    right:10px;
+    bottom 0;
+    width 45px
+    height 45px
+    margin auto 0
+    font size 30px
+    color #cc9a9a
+    margin-bottom -1px
+    transition all 0.2s easy-out
+    background-color transparent
+    appearance none
+    border-width 0;
+    cursor pointer
+    outline none 
+
+    }
+</style>
+

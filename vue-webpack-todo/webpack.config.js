@@ -22,6 +22,11 @@ const config = {
                
             },
             {
+                test: /\.jsx$/,
+                use: ['babel-loader'],
+
+            },
+            {
                 test: /\.css$/,
                 use: [
                     'vue-style-loader',                //可以不要
@@ -34,6 +39,12 @@ const config = {
                 use:[
                     'style-loader',
                     'css-loader',
+                    {
+                        loader:'postcss-loader',
+                        options:{
+                            sourceMap:true
+                        }
+                    },
                     'stylus-loader'
                 ]
             },
