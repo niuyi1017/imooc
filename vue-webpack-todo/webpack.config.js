@@ -2,6 +2,7 @@ const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const HTMLPlugin = require('html-webpack-plugin') 
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const isDev = process.env.NODE_ENV ==='development'
 const config = {
@@ -11,7 +12,7 @@ const config = {
         contentBase:'./dist'
     },
     output:{
-        filename:'bundle.js',
+        filename:'bundle.[hash:8].js',
         path:path.resolve(__dirname,'dist')
     },
     module:{
@@ -26,28 +27,15 @@ const config = {
                 use: ['babel-loader'],
 
             },
-            {
-                test: /\.css$/,
-                use: [
-                    'vue-style-loader',                //可以不要
-                    'style-loader',
-                    'css-loader'
-                ]
-            },
-            {
-                test:/\.styl/,
-                use:[
-                    'style-loader',
-                    'css-loader',
-                    {
-                        loader:'postcss-loader',
-                        options:{
-                            sourceMap:true
-                        }
-                    },
-                    'stylus-loader'
-                ]
-            },
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         'vue-style-loader',                //可以不要
+            //         'style-loader',
+            //         'css-loader'
+            //     ]
+            // },
+            
             {
                 test:/\.gif|jpg|jpeg|svg|png$/,
                use:{
@@ -77,8 +65,25 @@ const config = {
 }
 
 if(isDev){
+
     config.devtool = "#cheap-moudule-eval-source-map"
     config.mode= 'development',
+    config.module.rules.push(
+        {
+            test:/\.styl/,
+            use:[
+                'style-loader',
+                'css-loader',
+                {
+                    loader:'postcss-loader',
+                    options:{
+                        sourceMap:true
+                    }
+                },
+                'stylus-loader'
+            ]
+            },
+    )
     config.devServer = {
         port:'8000',
         host:'127.0.0.1',
@@ -90,6 +95,33 @@ if(isDev){
     config.plugins.push(
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
+    )
+}else{
+    config.mode = 'development',
+    config.output.filename = '[name].[chunkhash:8].js'
+    config.module.rules.push(
+        {
+                test:/\.styl/,
+                
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    'stylus-loader'
+                    ]
+
+                })
+           
+    
+    config.plugins.push(
+        new MiniCssExtractPlugin({
+           filename: 'styles.[contenthash:8].css'
+        })
     )
 }
 module.exports = config;

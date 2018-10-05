@@ -62,7 +62,7 @@ export default {
     position absolute
     top 2px
     bottom 0
-    maring auto 0
+    margin auto 0
     border none 
     appearance none
     outline none 

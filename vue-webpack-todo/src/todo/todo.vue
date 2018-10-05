@@ -85,7 +85,7 @@ export default {
     color inherit 
     
     box-sizing border-box
-    font-smoothing:antialiased
+    -webkit-font-smoothing:antialiased
     padding 16px 16px 16px 60px
     border none 
     box-shadow inset 0 -1px 1px 0 rgba(0,0,0,0.3)
