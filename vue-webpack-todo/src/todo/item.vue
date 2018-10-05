@@ -57,10 +57,10 @@ export default {
     }
 .toggle{
     text-align center
-    width 45px
-    height 45px
+    width 40px
+    height 40px
     position absolute
-    top 2px
+    top 0
     bottom 0
     margin auto 0
     border none 
