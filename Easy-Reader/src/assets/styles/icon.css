@@ -32,7 +32,7 @@
 }
 .icon-cart:before {
   content: "\e903";
-  color: #666;
+  /* color: #666; */
 }
 .icon-menu:before {
   content: "\e909";
