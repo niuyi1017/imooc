@@ -1,5 +1,3 @@
 module.exports = {
-  baseUrl: process.env.NODE_ENV === 'production'
-    ? '/imooc/Easy-Reader/dist/'
-    : '/'
+  baseUrl: '/imooc/Easy-Reader/dist/'
 }
