@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@vue/cli-service": "^3.0.5",
     "epubjs": "^0.3.72",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
