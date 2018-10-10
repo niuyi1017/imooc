@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  baseUrl: './'
+  baseUrl: 'imooc/Easy-Reader/dist/'
 }
