@@ -3,7 +3,7 @@
   <transition name="slide-up">
     <div class="menu-wrapper" v-show="ifTitleAndMenuShow" :class="{'hide-box-show':ifSettingShow||!ifTitleAndMenuShow}">
       <div class="icon-wrapper">
-        <span class="icon-menu icon" @click="showMenu"></span>
+        <span class="icon-menu icon" @click="showSetting(3)"></span>
       </div>
       <div class="icon-wrapper">
         <span class="icon-progress icon" @click="showSetting(2)"></span>
@@ -52,15 +52,20 @@
                                   @change="onProgressChange($event.target.value)"
                                   @input="onProgressInput($event.target.value)"
                                   :value="progress"
-                                  :disabled="!bookAvailiable"
+                                  :disabled="!bookAvailable"
                                   ref="progress">
         </div>
         <div class="text-wrapper">
-          <span>{{bookAvailiable ? progress + '%' : '加载中...'}}</span>
+          <span>{{bookAvailable ? progress + '%' : '加载中...'}}</span>
         </div>
       </div>
     </div>
   </transition>
+  <content-view :ifShowContent="ifShowContent"
+                v-show="ifShowContent"
+                :navigation="navigation"
+                :bookAvailable="bookAvailable"
+                @jumpTo="jumpTo"></content-view>
   <transition name="fade">
     <div class="content-mask"
       v-show="ifShowContent"
@@ -70,7 +75,11 @@
 </div>
 </template>
 <script>
+import ContentView from '@/components/Content'
 export default {
+  components: {
+    ContentView
+  },
   props: {
     ifTitleAndMenuShow: {
       type: Boolean,
@@ -80,7 +89,8 @@ export default {
     defaultFontSize: Number,
     themeList: Array,
     defaultTheme: Number,
-    bookAvailiable: Boolean
+    bookAvailable: Boolean,
+    navigation: Object
   },
   data () {
     return {
@@ -91,15 +101,15 @@ export default {
     }
   },
   methods: {
-    showMenu () {
-      this.ifShowContent = true
+    jumpTo (target) {
+      this.$emit('jumpTo', target)
     },
     hideContent () {
       this.ifShowContent = false
     },
     onProgressInput (progress) {
       this.progress = progress
-      this.$refs.progerss.style.backgroundSize = `${this.progress}% 100% `
+      this.$refs.progress.style.backgroundSize = `${this.progress}% 100%`
     },
     onProgressChange (progress) {
       this.$emit('onProgressChange', progress)
@@ -108,8 +118,13 @@ export default {
       this.$emit('setTheme', index)
     },
     showSetting (tag) {
-      this.ifSettingShow = true
       this.showTag = tag
+      if (this.showTag === 3) {
+        this.ifSettingShow = false
+        this.ifShowContent = true
+      } else {
+        this.ifSettingShow = true
+      }
     },
     hideSetting () {
       this.ifSettingShow = false
@@ -203,13 +218,13 @@ export default {
               border-radius: 50%;
               box-shadow: 0 px2rem(4) px2rem(4) rgba(0, 0, 0, .15);
               top: px2rem(-6);
-              left: px2rem(-11);
+              left: px2rem(-10);
               @include center;
               .small-point {
                 height: px2rem(8);
                 width: px2rem(8);
                 border-radius: 50%;
-                background: #000;
+                background: #999;
               }
             }
           }

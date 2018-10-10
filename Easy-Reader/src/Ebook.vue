@@ -16,7 +16,7 @@
     :defaultFontSize="defaultFontSize"
     :defaultTheme="defaultTheme"
     :themeList="themeList"
-    :bookAvailiable="bookAvailable"
+    :bookAvailable="bookAvailable"
     :navigation="navigation"
     @onProgressChange="onProgressChange"
     @setTheme="setTheme"
@@ -31,7 +31,7 @@
 import Epub from 'epubjs'
 import TitleBar from '@/components/TitleBar'
 import MenuBar from '@/components/MenuBar'
-const DOWNLOAD_URL = '/static/2018_Book_AgileProcessesInSoftwareEngine.epub'
+const DOWNLOAD_URL = '/static/jianai.epub'
 global.epub = Epub
 export default {
   data () {
@@ -91,7 +91,7 @@ export default {
   },
   methods: {
     jumpTo (href) {
-      this.book.display(href)
+      this.rendition.display(href)
       this.hideTitleAndMenu()
     },
     hideTitleAndMenu () {
