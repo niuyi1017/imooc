@@ -6,7 +6,7 @@
           <span class="text">{{item.label}}</span>
         </div>
       </div>
-      <div class="empty" v-else>加载中...</div>
+      <div class="empty" v-else>loading...</div>
     </div>
   </transition>
 </template>
