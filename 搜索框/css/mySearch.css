@@ -6,13 +6,20 @@
 
 body{
 	
-	background-image: url(../img/55d417c5c0cb6.jpg);
+	background-image: url(http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3ck0h513j21jk0v9kjl.jpg);
+	background-size: cover;
 	
 	overflow: hidden;
+	transition: all 0.2s;
+	height: 100%;
+	width: 100%;
 }
 .mask{
-	height: 1000px;
-	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 	background-color: rgba(0,0,0,0.25);
 	display: none;
 }

@@ -1,6 +1,11 @@
 window.onload = function(){
 	waterfall('main','box');
-	var dataInt = {"data":[{"src":'1.jpg'},{"src":'2.jpg'},{"src":'3.jpg'}]};
+	var dataInt = {"data":[
+							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjyhh57j21kw1bob29.jpg'},
+							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjxy8e9j21kw0w0kfb.jpg'},
+							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3ck0h513j21jk0v9kjl.jpg'}
+						]
+					}
 	window.onscroll = function(){
 		if(checkScrollSlide()){
 			var oParent = document.getElementById('main');
@@ -14,7 +19,7 @@ window.onload = function(){
 				oPic.className = 'pic';
 				oBox.appendChild(oPic);
 				var oImg = document.createElement('img');
-				oImg.setAttribute('src','img/'+dataInt.data[i].src);
+				oImg.setAttribute('src',dataInt.data[i].src);
 				oPic.appendChild(oImg);
 			}
 			waterfall('main','box');
@@ -81,6 +86,6 @@ function checkScrollSlide(){
 	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 	var heigeht =  document.body.clientHeight || document.documentElement.clientHeight;
 	
-	console.log(lastBoxH);
+//	console.log(lastBoxH);
 	return (lastBoxH<scrollTop+heigeht)?true:false;
 }

@@ -258,22 +258,32 @@ h3{
 
 footer{
 	min-height: 100px;
+	width: 100%;
 	background: #333;
 	color: #fff;
-	text-align: center;
+	position: relative;
 }
 ul.share-group{
 	display: block;
-	width: 1080px;
+	width: 100%;
 	margin: 0 auto;
+	margin-left: -45px;
 	padding: 50px;
-
+	text-align: center;
+	
 }
 .share-group li{
 	display: inline-block;
-	padding: 10px;
+	padding-right: 10px;
+	
 }
-.share-group li .fa-qq:hover{
+.share-group li a{
+	color: #FFFFFF;
+}
+.share-group li .fa-github:hover{
+	color: #089DB0;
+}
+.share-group li .fa-twitter:hover{
 	color: #089DB0;
 }
 .share-group li .fa-weibo:hover{
@@ -281,9 +291,10 @@ ul.share-group{
 }
 .copy{
 	padding-bottom: 20px;
+	text-align: center;
 }
 .main-wrapper{
-	background: url(../img/banner.jpg);
+	background: url(http://pgdwgiv7s.bkt.clouddn.com/blog/banner.jpg);
 	background-attachment: fixed;
 	background-repeat:no-repeat;	
 	background-size:cover;

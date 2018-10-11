@@ -1,13 +1,18 @@
 $(window).on('load',function(){
 	
 	waterfall();
-	var dataInt = {"data":[{"src":'1.jpg'},{"src":'2.jpg'},{"src":'3.jpg'}]}
+	var dataInt = {"data":[
+							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjyhh57j21kw1bob29.jpg'},
+							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjxy8e9j21kw0w0kfb.jpg'},
+							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3ck0h513j21jk0v9kjl.jpg'}
+						]
+					}
 	$(window).on('scroll',function(){
 		if(checkScrollSlide()){
 			$.each(dataInt.data, function(key,value) {
 				var oBox = $('<div>').addClass('box').appendTo($('#main'));
 				var oPic = $('<div>').addClass('pic').appendTo(oBox);
-				var oImg = $('<img>').attr('src','img/'+$(value).attr('src')).appendTo(oPic)
+				var oImg = $('<img>').attr('src',$(value).attr('src')).appendTo(oPic)
 			});
 			waterfall();
 		}
