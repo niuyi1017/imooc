@@ -31,7 +31,7 @@
 import Epub from 'epubjs'
 import TitleBar from '@/components/TitleBar'
 import MenuBar from '@/components/MenuBar'
-const DOWNLOAD_URL = 'http://pgdwgiv7s.bkt.clouddn.com/2018_Book_AgileProcessesInSoftwareEngine.epub'
+const DOWNLOAD_URL = '../static/2018_Book_AgileProcessesInSoftwareEngine.epub'
 global.epub = Epub
 export default {
   data () {
