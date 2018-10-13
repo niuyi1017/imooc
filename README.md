@@ -1,12 +1,13 @@
 
 # imooc慕课网学习demo  
-> 【持续更新】这个仓库整理了[慕课网](https://www.imooc.com/)相关课程的源码、Live Demo、主要知识点等。
-> 由于本人能力有限，代码中有不当之处在所难免，敬请各位看官批评指正。  
+> 【持续更新】这个仓库整理了[慕课网](https://www.imooc.com/)相关课程的源码、Live Demo、主要知识点等。  
 > 欢迎各位大佬 star、fork、issue、PR。
+> 由于能力有限，代码中有不当之处在所难免，敬请各位看官批评指正。  
 
 
 
-|# | 课程名称| Live Demo | 源   码 | 备注 | 
+
+|# | 课程名称| Demo| 课程参考源码 | 备注 | 
 |:-:|:-:|:-:|:-:|:-:|
 1 |[CSS3实现“图片阴影”效果](https://www.imooc.com/learn/240)| [点击查看](https://niuyi1017.github.io/imooc/CSS3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%98%B4%E5%BD%B1/index.html) | [点击查看](https://github.com/niuyi1017/imooc/tree/master/CSS3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E9%98%B4%E5%BD%B1) |box-shadow、transform、 :after & :before  
 2 |[css3实现网页平滑过渡效果](https://www.imooc.com/learn/252)|[点击查看](https://niuyi1017.github.io/imooc/CSS3%E7%BD%91%E9%A1%B5%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1/CSS%E7%BD%91%E9%A1%B5%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/CSS3%E7%BD%91%E9%A1%B5%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1)| @font-face、 transform、transition、 animaition、keyframes  
@@ -32,14 +33,22 @@
 22 |[搜索框制作](https://www.imooc.com/learn/21)|[仿Bing](https://niuyi1017.github.io/imooc/%E6%90%9C%E7%B4%A2%E6%A1%86/mySearch.html) [仿淘宝css版](https://niuyi1017.github.io/imooc/%E6%90%9C%E7%B4%A2%E6%A1%86/search4TB.html) [仿Bing](https://niuyi1017.github.io/imooc/%E6%90%9C%E7%B4%A2%E6%A1%86/search4TBjs.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/%E6%90%9C%E7%B4%A2%E6%A1%86)| jQuery、 Ajax
 23 |[jQM Web App –列车时刻表](https://www.imooc.com/learn/207)|[点击查看](https://niuyi1017.github.io/2018/04/22/webapp-train.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/%E5%88%97%E8%BD%A6%E6%97%B6%E5%88%BB%E8%A1%A8)| jQuery Mobile、Ajax
 24 |[进击Node.js基础（一）、（二）](https://www.imooc.com/learn/348)|[点击查看](https://niuyi1017.github.io/2018/09/10/http-crawler.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/imoocNode)| Node.js API、HTTP、爬虫 
-25 |[Vue+Webpack打造todo应用](https://www.imooc.com/learn/935)|[点击查看](https://niuyi1017.github.io/imooc/Easy-Reader/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/vue-webpack-todo)| webpack、Vue
+25 |[Vue+Webpack打造todo应用](https://www.imooc.com/learn/935)|[点击查看](https://niuyi1017.github.io/imooc/vue-webpack-todo/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/vue-webpack-todo)| webpack、Vue
 26 |[快速入门Web阅读器开发](https://www.imooc.com/learn/1038)|[点击查看](https://niuyi1017.github.io/imooc/Easy-Reader/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/Easy-Reader)| 阅读器引擎epub.js、Vue.js应用和过渡动画、阅读器 翻页换肤目录进度等功能
 
-### PS：
 
-* 这个仓库最开始是记录我自己跟着慕课网课程写的代码。不知道什么原因最近浏览量增长的很快，就整理了一下这个仓库，方便大家查看。  
-* 早期跟着课程视频写的代码，绝大部分都已经实现了课程中的效果，但不完全是按照老师的代码写的，有的稍作修改，有的增加了自己的思考，用其他方式实现  
-* 部分课程录制较早，课程代码中由于框架升级、依赖更新等原因无法正常运行的，我会尽力找到解决办法，持续维护。
+### 更新日志 
+#### 2019-10-13   V 1.0.0
+* 部分大体积静态资源已抽离并放入cdn，大幅减小仓库体积，提升demo演示速度，方便clone   
+* 整理readme文档，表格分类，便于查看  
+* review 部分代码，修复部分bug   
+
+### About
+
+> 这个仓库最开始是记录我自己跟着慕课网课程写的代码的地方。最近浏览量增长的很快，就整理了一下这个仓库，方便大家查看。   
+> 早期跟着课程视频写的代码，绝大部分都已经实现了课程中的效果，但不完全是按照老师的代码写。在保证项目效果的前提下，部分代码稍作修改或增加了自己的思考，用其他方式实现  
+> 部分视频课程中代码由于框架升级、依赖更新等原因无法正常运行，我会尽力找到解决办法，持续维护。
+
 
 ------
 #### [博客主页](https://niuyi1017.github.io)  
