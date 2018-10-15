@@ -1,0 +1,17 @@
+{
+  "name": "remdemo",
+  "version": "1.0.0",
+  "description": "remDemo",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.9.4"
+  },
+  "devDependencies": {
+    "@webpack-cli/init": "^0.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "niuyi",
+  "license": "MIT"
+}

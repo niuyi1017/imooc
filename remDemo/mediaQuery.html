@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MediaQuery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+  <style>
+    .box {
+      height: 100px;
+      width: 100%;
+      
+    }
+    .inner:nth-child(1){
+    	background-color: red;
+    }
+    .inner:nth-child(2){
+    	background-color: blue;
+    }
+    .inner:nth-child(3){
+    	background-color: red;
+    }
+    .inner:nth-child(4){
+    	background-color: blue;
+    }
+    @media screen and (max-width:320px){
+    	.inner {
+	      width: 25%;
+	      height: 100px;
+	      float: left;
+    }
+    }
+    @media screen and (min-width:321px){
+    	.inner {
+	      width: 100%;
+	      height: 100px;
+	      
+	      background: blue;
+	     
+    }
+    }
+  </style>  
+  
+</head>
+<body>
+  <div class="box">
+    <div class="inner"></div>
+    <div class="inner"></div>
+    <div class="inner"></div>
+    <div class="inner"></div>
+
+  </div>
+</body>
+</html>

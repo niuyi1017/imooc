@@ -1,0 +1,12 @@
+@function px2rem($px) {
+  $rem: 37.5px;
+  @return ($px / $rem) +rem
+}
+.hello {
+  width: px2rem(100px);
+  height: px2rem(100px);
+  &.b {
+    width: px2rem(50px);
+    height: px2rem(50px);
+  }
+}
