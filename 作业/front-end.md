@@ -24,3 +24,8 @@
 
 
 # 算法  
+
+# 面试题集锦  
+
+[Tencent](https://blog.csdn.net/xiangzhihong8/article/details/78441626?utm_source=blogxgwz2)  
+[Tencent](https://blog.csdn.net/xixi880928/article/details/78842689?utm_source=blogxgwz4)  
