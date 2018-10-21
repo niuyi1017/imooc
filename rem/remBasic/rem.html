@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>rem</title>
+		<style type="text/css">
+			html {
+				font-size: 17px;
+			}
+			.box {
+				/*height: 160px;
+				width: 160px;*/
+				height: 10rem;
+				width: 10rem;
+				background: red;
+			}
+			.text {
+				color: #fff;
+				font-size: 1rem;
+			}
+			
+			@media screen and (max-width: 360px) and (min-width:321px) {
+				html {
+					font-size: 20px;
+				}
+			}@media screen and (max-width:320px ) {
+				 font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p class="text">hello rem</p>
+		</div>
+		<script>
+			let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			
+			let htmlDom = document.getElementsByTagName('html')[0];
+			
+			htmlDom.style.fontSize = htmlWidth / 10 + 'px'
+		</script>
+	</body>
+</html>
