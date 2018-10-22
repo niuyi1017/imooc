@@ -1,0 +1,98 @@
+@function px2rem($px) {
+  $rem: 37.5px;
+  @return ($px  /$rem) + rem
+
+}
+
+.header {
+  height: px2rem(40px);
+  width: 100%;
+  background: red;
+  padding-left: px2rem(23px);
+  .header-item {
+    float: left;
+    color: #FFCECD;
+    font-size: px2rem(16px);
+    margin-right: px2rem(20px);
+    line-height: px2rem(40px);
+    &:nth-child(2) {
+      color: #fff;
+      font-size: px2rem(17px)
+    }
+  }
+}
+.banner-content {
+  position: relative;
+  .banner {
+    display: block;
+    width: 100%;
+    height: px2rem(180px);
+  }
+  .banner-title {
+    position: absolute;
+    left: px2rem(15px);
+    bottom: px2rem(12px);
+    font-size: px2rem(18px);
+    font-weight: 500;
+    letter-spacing: px2rem(2px);
+    color: #fff
+  }
+}
+.news-content {
+  .news-item {
+    width: 100%;
+    height: px2rem(90px);
+    padding: 0 px2rem(15px);
+    box-sizing: border-box;
+  }
+  .item-inner {
+    border-bottom: px2rem(1px) solid #e5e5e5;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  .news-img{
+    float: left;
+    display: block;
+    margin-top: px2rem(10px);
+    margin-right: px2rem(15px);
+    height: px2rem(70px);
+    width: px2rem(90px);
+
+  }
+  .news-title {
+    color: #404040;
+    font-size: px2rem(17px);
+    margin-top: px2rem(16px);
+    line-height: px2rem(20px)
+
+  }
+  .time {
+    position: absolute;
+    left: px2rem(105px);
+    bottom: px2rem(8px);
+
+    color: #888;
+    font-size: px2rem(14px);
+    
+
+  }
+   .num {
+    position: absolute;
+    right: px2rem(5px);
+    bottom: px2rem(8px);
+
+    color: #888;
+    font-size: px2rem(14px);
+    &::before {
+      content: '';
+      position: absolute;
+      background: url('http://pgdwgiv7s.bkt.clouddn.com/rem/read.png');
+      background-size: contain;
+      height: px2rem(16px);
+      width: px2rem(16px);
+      left: px2rem(-20px);
+      top: px2rem(2px)
+    }
+  }
+}
