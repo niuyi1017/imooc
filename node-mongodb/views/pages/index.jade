@@ -3,10 +3,10 @@ block content
   .container
     .row.justify-content-around
       each item in movies 
-        .col-md-2
+        .col-md-3
           .thumbnail
             a(href="/movies/"+ item._id)
-              img(src=item.poster, alt="#{item.title}")
+              img.poster(src=item.poster, alt="#{item.title}")
             .caption
               h3 #{item.title}
               p: a.btn.btn-primary(href="/movies/#{item._id}",role="button") 观看预告片

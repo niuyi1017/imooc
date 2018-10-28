@@ -20,10 +20,10 @@ block content
               td #{item.country}
               td #{item.year}
               //-td #{moment(item.mate.creatAt).format('MM/DD/YYYY')}
-              td: a(target="_blank",href="../movies/#{item._id}") 查看
+              td: a(target="_blank",href="../movie/#{item._id}") 查看
               td: a(target="_blank",href="../admin/update/#{item._id}") 修改 
               td 
                 button.btn.btn-danger.btn-sm.del(type="button",data-id="#{item._id}") 删除
-
+   script(src="/js/admin.js")
 
             
