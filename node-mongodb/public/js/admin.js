@@ -13,7 +13,7 @@ $(function () {
     .done(results => {
       if (results.success == 1) {
         if (tr.length > 0){
-          tr.remove()
+          tr.hide(500).remove()
         }
       }
     })

@@ -20,12 +20,12 @@ const movieSchema = new mongoose.Schema({
     }
   }
 })
-
+// 注意！！！schema中不可用ES6 箭头函数，否则 this = undefined
 movieSchema.pre('save', function(next){
   if (this.isNew) {
     this.meta.createAt = this.meta.updateAt = Date.now()
   }else {
-    // console.log(this.meta)
+    
     this.meta.updateAt = Date.now()
   }
   next()

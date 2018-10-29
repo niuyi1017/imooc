@@ -3,17 +3,16 @@ const path =require('path')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const _ = require('underscore')
-// var multer = require('multer'); // v1.0.5
-// var upload = multer()
 const Movie = require('./models/movie')
 
 const port = process.env.port || 3000
 const app = express() 
 
-// mongoose.connect('mongodb://localhost/imooc_movie', { useNewUrlParser: true })
+
 mongoose.connection.openUri('mongodb://localhost/imooc_movie', { useNewUrlParser: true })
 app.set ('views', './views/pages')
 app.set ('view engine', 'jade')
+app.locals.moment = require('moment')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(path.resolve(__dirname,'public')))
@@ -37,6 +36,9 @@ app.get('/', (req, res) => {
 app.get('/movie/:id', (req, res) => {
   let id = req.params.id
   Movie.findById(id, (err, movie) => {
+    if (err) {
+      console.log(err)
+    }
     res.render('detail', {
       title: 'imooc ' + movie.title,
       movie
@@ -79,9 +81,7 @@ app.get('/admin/update/:id', (req, res) => {
 
 // admin post movie    admin/movie/new
 app.post('/admin/movie/new', (req, res) => {
-  // console.log(req.body)
   let id = req.body.movie._id
-  // let id = req.body.id
   let movieObj = req.body.movie
   let _movie 
 
@@ -137,9 +137,8 @@ app.get('/admin/list', (req, res) => {
 
 app.delete('/admin/list', (req, res) => {
   let id = req.query.id
-
   if (id) {
-    Movie.remove({ _id: id}, (err, movie) => {
+    Movie.deleteOne({ _id: id}, (err, movie) => {
       if (err) {
         console(err)
       }
