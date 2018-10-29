@@ -4,3 +4,51 @@
       h1=title
       small 重度科幻迷
   hr
+.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-bottom
+  .container
+    .navbar-header
+      a.navbar-brand(href="/") 重度科幻迷
+    p.navbar-text.navbar-right.navbar-nav
+      button.btn.btn-default.nav-item(data-toggle="modal" data-target="#signupModal") 注册
+      span &nbsp; | &nbsp;
+      a.nav-item(href="#", data-toggle="modal", data-target="#signinModal") 登录
+#signupModal.modal.fade(role="dialog", aria-labelledby="modal-title",tabindex="-1", aria-hidden="true")
+  .modal-dialog.modal-dialog-centered(role="document")
+    .modal-content
+      form(action="/user/signup", method="post")
+        .modal-header 
+          h5.modal-title#modal-title 注册
+        .modal-body 
+          .form-group
+            .row.justify-content-center
+              .col-2
+                label(for="signupName") 用户名
+              input#signupName.form-contol.col-6(type="text",name="user[name]",)
+          .form-group
+            .row.justify-content-center
+              .col-2
+                label(for="signupPassword") 密码
+              input#signupPassword.form-contol.col-6(type="text",name="user[password]",)
+        .modal-footer
+            button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+            button.btn.btn-success(type="submit", data-dismiss="modal") 注册
+#signinModal.modal.fade(role="dialog", aria-labelledby="modal-title",tabindex="-1", aria-hidden="true")
+  .modal-dialog.modal-dialog-centered(role="document")
+    .modal-content
+      form(action="/user/signin", method="post")
+        .modal-header 
+          h5.modal-title#modal-title 登录
+        .modal-body 
+          .form-group
+            .row.justify-content-center
+              .col-2
+                label(for="signinName") 用户名
+              input#signinName.form-contol.col-6(type="text",name="user[name]",)
+          .form-group
+            .row.justify-content-center
+              .col-2
+                label(for="signinPassword") 密码
+              input#signinPassword.form-contol.col-6(type="text",name="user[password]",)
+        .modal-footer
+            button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+            button.btn.btn-success(type="submit", data-dismiss="modal") 登录
