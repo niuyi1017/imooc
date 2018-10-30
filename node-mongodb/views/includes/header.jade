@@ -8,12 +8,18 @@
   .container
     .navbar-header
       a.navbar-brand(href="/") 重度科幻迷
-    p.navbar-text.navbar-right.navbar-nav
-      button.btn.btn-default.nav-item(data-toggle="modal" data-target="#signupModal") 注册
-      span &nbsp; | &nbsp;
-      a.nav-item(href="#", data-toggle="modal", data-target="#signinModal") 登录
-#signupModal.modal.fade(role="dialog", aria-labelledby="modal-title",tabindex="-1", aria-hidden="true")
-  .modal-dialog.modal-dialog-centered(role="document")
+    if user
+      p.navbar-text.navbar-right.navbar-nav
+        span.nav-item 欢迎您 #{user.name}
+        span &nbsp; | &nbsp;
+        a.nav-item(href="/logout") 退出登录
+    else
+      p.navbar-text.navbar-right.navbar-nav
+        a.nav-item(href="#", data-toggle="modal" data-target="#signupModal") 注册
+        span &nbsp; | &nbsp;
+        a.nav-item(href="#", data-toggle="modal", data-target="#signinModal") 登录
+#signupModal.modal.fade(role="dialog")
+  .modal-dialog.modal-dialog-centered
     .modal-content
       form(action="/user/signup", method="post")
         .modal-header 
@@ -31,7 +37,7 @@
               input#signupPassword.form-contol.col-6(type="text",name="user[password]",)
         .modal-footer
             button.btn.btn-default(type="button", data-dismiss="modal") 关闭
-            button.btn.btn-success(type="submit", data-dismiss="modal") 注册
+            button.btn.btn-success(type="submit") 注册
 #signinModal.modal.fade(role="dialog", aria-labelledby="modal-title",tabindex="-1", aria-hidden="true")
   .modal-dialog.modal-dialog-centered(role="document")
     .modal-content
@@ -51,4 +57,4 @@
               input#signinPassword.form-contol.col-6(type="text",name="user[password]",)
         .modal-footer
             button.btn.btn-default(type="button", data-dismiss="modal") 关闭
-            button.btn.btn-success(type="submit", data-dismiss="modal") 登录
+            button.btn.btn-success(type="submit") 登录

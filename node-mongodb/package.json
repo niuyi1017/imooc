@@ -11,11 +11,15 @@
   "dependencies": {
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "grunt": "^1.0.3",
     "jade": "^1.11.0",
     "moment": "^2.22.2",
     "mongoose": "^5.3.7",
+    "morgan": "^1.9.1",
     "multer": "^1.4.1",
     "underscore": "^1.9.1"
   },

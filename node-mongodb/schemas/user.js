@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
-const bcrybt = require('bcrypt')
+const bcrypt = require('bcrypt')
 const SALT_WORK_FACTOR = 10
 const userSchema = new mongoose.Schema({
   name: {
     unique: true,
     type: String
   },
-  password: Sting,
+  password: String,
   meta: {
     createAt: {
       type: Date,
@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     }
   }
 })
-// 注意！！！schema中不可用ES6 箭头函数，否则 this = undefined
+// 注意！！！schema中不可用 ES6箭头函数 ，否则 this = undefined
 userSchema.pre('save', function (next) {
   let user = this
   if (this.isNew) {
@@ -38,8 +38,19 @@ userSchema.pre('save', function (next) {
       next()
     })
   })
-  next()
+  //next()
 })
+
+userSchema.methods = {
+  comparePassword: function (_password, cb) {
+    bcrypt.compare(_password, this.password, function (err, isMath) {
+      if (err) {
+        return cb(err)
+      }
+      cb(null, isMath)
+    })
+  }
+}
 
 userSchema.statics = {
   fetch: function (cb) {
