@@ -13,7 +13,7 @@ const app = express()
 
 const dbUrl = 'mongodb://localhost/imooc_movie'
 mongoose.connect(dbUrl, { useNewUrlParser: true })
-app.set ('views', './views/pages')
+app.set ('views', './app/views/pages')
 app.set ('view engine', 'jade')
 
 app.use(bodyParser.json())
