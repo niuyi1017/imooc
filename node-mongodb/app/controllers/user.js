@@ -1,5 +1,15 @@
 const User = require('../models/user')
 
+exports.showSignup = (req, res) => {
+  res.render('signup', {
+    title: '注册页面'
+  })
+}
+exports.showSignin = (req, res) => {
+  res.render('signin', {
+    title: '登录页面'
+  })
+}
 exports.signup = (req, res) => {
   let _user = req.body.user
   User.findOne({ name: _user.name }, (err, user) => {
@@ -7,18 +17,19 @@ exports.signup = (req, res) => {
       console.log(err)
     }
     if (user) {
-      return res.redirect('/')
+      return res.redirect('/signin')
     } else {
       let user = new User(_user)
       user.save((err, user) => {
         if (err) {
           console.log(err)
         }
-        res.redirect('/admin/userList')
+        res.redirect('/')
       })
     }
   })
 }
+
 
 //signin
 exports.signin = (req, res) => {
@@ -31,7 +42,7 @@ exports.signin = (req, res) => {
       console.log(err)
     }
     if (!user) {
-      return res.redirect('/')
+      return res.redirect('/signup')
     }
     user.comparePassword(password, (err, isMatch) => {
       if (err) {
@@ -43,7 +54,7 @@ exports.signin = (req, res) => {
         return res.redirect('/')
       } else {
         console.log("Password is not matched!")
-        return res.redirect('/')
+        return res.redirect('/signin')
       }
     })
   })
