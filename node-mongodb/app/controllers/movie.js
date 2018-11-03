@@ -1,4 +1,5 @@
 const Movie = require('../models/movie')
+const Comment = require('../models/comment')
 const _ = require('underscore')
 
 exports.detail = (req, res) => {
@@ -7,9 +8,20 @@ exports.detail = (req, res) => {
     if (err) {
       console.log(err)
     }
-    res.render('detail', {
-      title: 'imooc ' + movie.title,
-      movie
+    Comment
+    .find({movie: id})
+    .populate('from', 'name')
+    .populate('replay.from reply.to', 'name')
+    .exec((err, comments) => {
+      if (err) {
+        console.log(err)
+      }
+      console.log(comments)
+      res.render('detail', {
+        title: 'imooc ' + movie.title,
+        movie,
+        comments
+      })
     })
   })
 }
