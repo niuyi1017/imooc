@@ -4,28 +4,20 @@ block content
     .row
       table.table.table-hover
         thead 
-          th 电影名字
-          th 导演
-          th 国家 
-          th 语言
-          th 上映年份  
+          th 用户名
           th 录入时间
           th 查看
           th 更新 
           th 删除
         tbody
-          each item in movies 
+          each item in categories 
             tr(class="item-id-#{item._id}")
-              td #{item.title}
-              td #{item.director}
-              td #{item.country}
-              td #{item.language}
-              td #{item.year}
+              td #{item.name}
               td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
               td: a(target="_blank",href="../movie/#{item._id}") 查看
-              td: a(target="_blank",href="../movie/update/#{item._id}") 修改 
+              td: a(target="_blank",href="../admin/update/#{item._id}") 修改 
               td 
                 button.btn.btn-danger.btn-sm.del(type="button",data-id="#{item._id}") 删除
-   script(src="/js/admin.js")
+   
 
             

@@ -1,5 +1,6 @@
 const Movie = require('../models/movie')
 const Comment = require('../models/comment')
+const Category = require('../models/category')
 const _ = require('underscore')
 
 exports.detail = (req, res) => {
@@ -28,19 +29,17 @@ exports.detail = (req, res) => {
 
 //admin page
 exports.new = (req, res) => {
-  res.render('admin', {
-    title: 'imooc 后台录入页',
-    movie: {
-      title: "",
-      director: "",
-      country: "",
-      year: "",
-      poster: "",
-      flash: "",
-      summary: "",
-      language: ""
+  Category.find({}, (err, categories) => {
+    if (err) {
+      console.log(err)
     }
+    res.render('admin', {
+      title: 'imooc 后台录入页',
+      categories,
+      movie: {}
+    })
   })
+  
 }
 
 //admin update page  
@@ -51,9 +50,12 @@ exports.update = (req, res) => {
       if (err) {
         console.log(err)
       }
-      res.render('admin', {
-        title: 'imooc 后台更新页',
-        movie
+      Category.find({}, (err, categories) => {
+        res.render('admin', {
+          title: 'imooc 后台更新页',
+          movie,
+          categories
+        })
       })
     })
   }
@@ -64,9 +66,7 @@ exports.save = (req, res) => {
   let id = req.body.movie._id
   let movieObj = req.body.movie
   let _movie
-
-
-  if (id !== 'undefined') {
+  if (id) {
     Movie.findById(id, (err, movie) => {
       if (err) {
         console.log(err)
@@ -81,21 +81,18 @@ exports.save = (req, res) => {
     })
   }
   else {
-    _movie = new Movie({
-      director: movieObj.director,
-      title: movieObj.title,
-      country: movieObj.country,
-      year: movieObj.year,
-      summary: movieObj.summary,
-      flash: movieObj.flash,
-      poster: movieObj.poster,
-      language: movieObj.language,
-    })
+    _movie = new Movie(movieObj)
+    let categoryId = _movie.category 
     _movie.save((err, movie) => {
       if (err) {
         console.log(err)
       }
-      res.redirect('/movie/' + movie._id)
+      Category.findById(categoryId, (err, category) => {
+        category.movies.push(movie._id)
+        category.save((err, category) => {
+          res.redirect('/movie/' + movie._id)
+        })
+      })
     })
   }
 }

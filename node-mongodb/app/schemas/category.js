@@ -1,19 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
-const movieSchema = new Schema({
-  director: String,
-  title: String,
-  summary: String,
-  language: String,
-  flash: String,
-  poster: String,
-  country: String,
-  year: Number,
-  category: {
-    type: ObjectId,
-    ref: 'Category'
-  },
+const categorySchema = new Schema({
+  name:String,
+  movies:[{ 
+      type: ObjectId,
+      ref:'Movie'
+    }],
   meta: {
     createAt: {
       type: Date,
@@ -26,7 +19,7 @@ const movieSchema = new Schema({
   }
 })
 // 注意！！！schema中不可用ES6 箭头函数，否则 this = undefined
-movieSchema.pre('save', function(next){
+categorySchema.pre('save', function(next){
   if (this.isNew) {
     this.meta.createAt = this.meta.updateAt = Date.now()
   }else {
@@ -36,7 +29,7 @@ movieSchema.pre('save', function(next){
   next()
 })
 
-movieSchema.statics = {
+categorySchema.statics = {
   fetch: function(cb) {
     return this
       .find({})
@@ -49,4 +42,4 @@ movieSchema.statics = {
       .exec(cb)
   }
 }
-module.exports = movieSchema
+module.exports = categorySchema

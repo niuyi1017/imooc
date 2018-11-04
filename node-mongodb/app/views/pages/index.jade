@@ -1,12 +1,20 @@
 extends ../layout
 block content 
   .container
-    .row.justify-content-around
-      each item in movies 
-        .col-md-3
-          .thumbnail
-            a(href="/movie/"+ item._id)
-              img.poster(src=item.poster, alt="#{item.title}")
-            .caption
-              h4 #{item.title}
-              p: a.btn.btn-primary(href="/movie/#{item._id}",role="button") 观看预告片
+    each cat in categories
+      .card
+        .card-header
+          h3 #{cat.name}
+        .card-body
+          if cat.movies && cat.movies.length > 0
+            .row.justify-content-around
+              each item in cat.movies 
+                .col-md-3
+                  .thumbnail
+                    a(href="/movie/"+ item._id)
+                      img.poster(src=item.poster, alt="#{item.title}")
+                    .caption
+                      h4 #{item.title}
+                      p: a.btn.btn-block.btn-primary(href="/movie/#{item._id}",role="button") 观看预告片
+
+     
