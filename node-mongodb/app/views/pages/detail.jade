@@ -4,24 +4,36 @@ block content
     .row
       .col-7
         embed(src="#{movie.flash}", allowFullScreen="true", quality="high", height="400", width="600", type="application/x-shockwave-flash")
-        .card.border-dark
+        .card
           .card-header
             h5 评论区
           .card-body
-            ul.list-group
-              each item in comments
-                li.list-group-item.list-group-item-action.flex-column.align-items-start.list-group-item-light
+            each item in comments
+              ul.list-group
+                li.list-group-item.list-group-item-action.list-group-item-warning
                   .d-flex.w-100
-                    a.comment(href="#comments", data-cid=item._id,data-tid=item.from._id)
+                    a.comment(href="#comments", data-cid="#{item._id}",data-tid="#{item.from._id}")
                       img(src="/img/boy.svg", alt="头像")
-                    h4 #{item.from.name}
+                    span.text-info &nbsp;&nbsp; 
+                    h4.text-success #{item.from.name}
+                  hr
                   h5.mb-1 #{item.content}
-                    ul.list-group
-                      li.list-group-item.list-group-item-action.flex-column.align-items-start.list-group-item-light
-                        .d-flex.w-100
-                          img(src="/img/boy.svg", alt="头像")
-                          h5.mb-1 用户名
-                        p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                    if item.reply && item.reply.length > 0
+                      .col-12 &nbsp;
+                      each reply in item.reply
+                        ul.list-group
+                          li.list-group-item.list-group-item-light
+                            .d-flex.w-100
+                              a.comment(href="#comments", data-cid="#{item._id}",data-tid="#{reply.from._id}")
+                                img(src="/img/boy.svg", alt="头像")
+                              span.text-info &nbsp;&nbsp; 
+                              h5.mb-1 
+                                | #{reply.from.name} 
+                                span.text-info &nbsp;回复&nbsp; 
+                                | #{reply.to.name}:
+                            p.mb-1 #{reply.content}
+                        .col-12 &nbsp;
+              .col-12 &nbsp;
           hr
           #comments.col-10.offset-1
             form#commentForm(method='post', action='/user/comment')
@@ -34,7 +46,10 @@ block content
                   button.btn.btn-primary.btn-block(type='submit') 提交
               else
                   a.btn.btn-dark.btn-block(href='#', data-toggle='modal', data-target='#signinModal') 登录后评论 
-               
+          .col-12 &nbsp; 
+        .col-12 &nbsp;  
+        .col-12 &nbsp;
+        .col-12 &nbsp;  
       .col-5
         dl.dl-horizontal
           dt 电影名字

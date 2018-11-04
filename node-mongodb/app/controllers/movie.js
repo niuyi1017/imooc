@@ -11,7 +11,7 @@ exports.detail = (req, res) => {
     Comment
     .find({movie: id})
     .populate('from', 'name')
-    .populate('replay.from reply.to', 'name')
+    .populate('reply.from reply.to', 'name')
     .exec((err, comments) => {
       if (err) {
         console.log(err)

@@ -3,6 +3,7 @@ const Comment = require('../models/comment')
 exports.save = (req, res) => {
   let _comment = req.body.comment
   let movieId = _comment.movie
+  // console.log(_comment)
   if(_comment.cid){
     Comment.findById(_comment.cid, (err, comment) => {
       let reply = {
