@@ -5,6 +5,10 @@ block content
       if movie._id
         input(type="hidden",name="movie[_id]",value=movie._id)
       .form-group.row
+        label.col-sm-2.col-form-label(for="douban") 豆瓣同步
+        .col-sm-10
+          input#douban.form-control(type="text")
+      .form-group.row
         label.col-sm-2.col-form-label(for="inputCategory") 电影分类
         .col-sm-10
           input#inputCategory.form-control(type="text", name="movie[categoryName]", value = movie.categoryName)
@@ -52,3 +56,4 @@ block content
       .form-group.row
         .col-sm-offset-2.col-sm-10
         button.btn.btn-primary.btn-lg(type="submit") 录 入
+  script(src="/js/admin.js")
