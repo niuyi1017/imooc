@@ -82,17 +82,33 @@ exports.save = (req, res) => {
   }
   else {
     _movie = new Movie(movieObj)
-    let categoryId = _movie.category 
+    let categoryId = movieObj.category 
+    let categoryName = movieObj.categoryName 
     _movie.save((err, movie) => {
       if (err) {
         console.log(err)
       }
-      Category.findById(categoryId, (err, category) => {
-        category.movies.push(movie._id)
-        category.save((err, category) => {
-          res.redirect('/movie/' + movie._id)
+
+      if (categoryId) {
+        Category.findById(categoryId, (err, category) => {
+          category.movies.push(movie._id)
+          category.save((err, category) => {
+            res.redirect('/movie/' + movie._id)
+          })
         })
-      })
+      }
+      else if (categoryName) {
+        let category = new Category({
+          name: categoryName,
+          movies: [movie._id]
+        })
+        category.save((err, category) => {
+          movie.category = category._id
+          movie.save((err, movie) => {
+            res.redirect('/movie/' + movie._id)
+          })
+        })
+      }
     })
   }
 }
