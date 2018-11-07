@@ -1,7 +1,7 @@
 extends ../layout
 block content 
   .container.my-xl-5
-    form.form-horizonal(action="/admin/movie", method="post")
+    form.form-horizonal(action="/admin/movie", method="post", enctype="multipart/form-data")
       if movie._id
         input(type="hidden",name="movie[_id]",value=movie._id)
       .form-group.row
@@ -41,6 +41,10 @@ block content
         label.col-sm-2.col-form-label(for="inputPoster") 海报地址
         .col-sm-10
           input#inputPoster.form-control(type="text", name="movie[poster]", value=movie.poster)
+      .form-group.row
+        label.col-sm-2.col-form-label(for="uploadPoster") 海报上传
+        .col-sm-10
+          input#uploadPoster(type="file", name="uploadPoster")
       .form-group.row
         label.col-sm-2.col-form-label(for="inputFlash") 片源地址
         .col-sm-10

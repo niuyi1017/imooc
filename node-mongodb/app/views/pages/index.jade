@@ -13,7 +13,12 @@ block content
                 .col-md-3
                   .thumbnail
                     a(href="/movie/"+ item._id)
-                      img.poster(src=item.poster, alt="#{item.title}")
+                      if item.poster.indexOf('http:') > -1 
+                        img.poster(src=item.poster, alt="#{item.title}")
+                      else if item.poster.indexOf('https:') > -1 
+                        img.poster(src=item.poster, alt="#{item.title}")
+                      else
+                        img.poster(src="/upload/#{item.poster}", alt="#{item.title}")
                     .caption
                       h4 #{item.title}
                       p: a.btn.btn-block.btn-primary(href="/movie/#{item._id}",role="button") 观看预告片

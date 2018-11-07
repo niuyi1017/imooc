@@ -10,6 +10,7 @@ block content
           th 语言
           th 上映年份  
           th 录入时间
+          th PV
           th 查看
           th 更新 
           th 删除
@@ -22,10 +23,20 @@ block content
               td #{item.language}
               td #{item.year}
               td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
-              td: a(target="_blank",href="../movie/#{item._id}") 查看
+              td #{item.pv}
+              td: a(target="_blank",href="../../movie/#{item._id}") 查看
               td: a(target="_blank",href="../movie/update/#{item._id}") 修改 
               td 
                 button.btn.btn-danger.btn-sm.del(type="button",data-id="#{item._id}") 删除
+    .row
+      .col-12 
+        span &nbsp;
+    .row
+      .col-12 
+        span &nbsp;
+    .row
+      .col-12 
+        span &nbsp;
    script(src="/js/admin.js")
 
             

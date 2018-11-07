@@ -10,6 +10,10 @@ const movieSchema = new Schema({
   poster: String,
   country: String,
   year: Number,
+  pv: {
+    type: Number,
+    default: 0
+  },
   category: {
     type: ObjectId,
     ref: 'Category'
