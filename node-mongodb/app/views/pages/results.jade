@@ -1,0 +1,40 @@
+extends ../layout
+block content 
+  .container.my-md-3
+    .card.my-md-3
+      .card-header
+        h3 #{keyword}
+      .card-body
+        if movies && movies.length > 0
+          .row.justify-content-around
+            each item in movies 
+              .col-md-3
+                .thumbnail
+                  a(href="/movie/"+ item._id)
+                    img.poster(src=item.poster, alt="#{item.title}")
+                  .caption
+                    h4 #{item.title}
+                    p: a.btn.btn-block.btn-primary(href="/movie/#{item._id}",role="button") 观看预告片
+    nav(aria-label="Page navigation example")
+      ul.pagination.justify-content-md-center
+        - for(var i = 0; i < totalPage; i ++ ){
+          - if (currentPage == (i+1)){
+              li.active.page-item
+                span.page-link #{currentPage}
+          - }else{
+              li.page-item
+                a.page-link(href='/results?p=#{i}&#{query}') #{i+1}
+          - }
+        - }
+    .row
+      .col-12
+        span &nbsp;
+    .row
+      .col-12
+        span &nbsp;
+    .row
+      .col-12
+        span &nbsp;
+      
+    
+     

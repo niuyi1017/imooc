@@ -4,7 +4,8 @@ block content
     each cat in categories
       .card.my-md-3
         .card-header
-          h3 #{cat.name}
+          h3 
+            a(href='/results?cat=#{cat._id}&p=0') #{cat.name}
         .card-body
           if cat.movies && cat.movies.length > 0
             .row.justify-content-around

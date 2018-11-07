@@ -1,8 +1,16 @@
 .container
   .row
-    .page-header
+    .page-header.col-12
       h1=title
-      small 重度科幻迷
+  .row.justify-content-between
+    .col-4.d-flex.align-items-center
+      p 重度科幻迷
+    .col-4 
+      form(action="/results", method="get")
+        .input-group.mb-3
+          input.form-control(type="text", name ='q')
+          .input-group-append
+            button.btn.btn-outline-secondary(type="submit") 搜索
   hr
 .navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-bottom
   .container
