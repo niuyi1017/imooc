@@ -1,0 +1,166 @@
+ .wrapper {
+   background: #ccc;
+   height: 400px;
+   width: 500px;
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;
+   align-content: flex-start;
+   margin: auto
+ }
+
+ .line {
+   background: #666;
+   display: flex;
+   justify-content: space-around;
+ }
+
+ .se {
+   height: 80px;
+   width: 80px;
+   background: #123;
+   border-radius: 5px;
+   display: flex;
+   padding: 10px;
+   border: 1px solid #fff;
+   margin: 10px;
+ }
+
+ .dot {
+   background: #fefefe;
+   height: 20px;
+   width: 20px;
+   border-radius: 50%
+ }
+
+ #se1 {
+   justify-content: center;
+   align-items: center
+ }
+
+ #se2 {
+   justify-content: space-between;
+ }
+
+ #se2 .dot:last-child {
+   align-self: flex-end;
+ }
+
+ #se3 {
+   justify-content: space-around;
+ }
+
+ #se3 .dot:nth-child(2) {
+   align-self: center
+ }
+
+ #se3 .dot:nth-child(3) {
+   align-self: flex-end
+ }
+
+ #se4,
+ #se5 {
+   flex-direction: column;
+   justify-content: space-between
+ }
+
+ #se6 {
+   flex-direction: column;
+   justify-content: space-around
+ }
+
+ #se4 .col,
+ #se5 .col,
+ #se6 .col {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ #se5 .col:nth-child(2) {
+   justify-content: center
+ }
+
+ .content {
+   height: 100px;
+   border: 1px solid #123;
+   display: flex;
+ }
+
+ .left,
+ .right {
+   flex: 0 0 100px;
+   background: #666
+ }
+
+ .center {
+   flex: 1;
+   background-color: pink;
+ }
+
+ #jz {
+   height: 100px;
+   width: 100px;
+   position: relative;
+   /* display: flex;
+      justify-content: center;
+      align-items: center;*/
+   background: #666
+ }
+
+ #jz .item {
+   width: 20px;
+   height: 20px;
+   background: #123;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%)
+ }
+
+ .box {
+   width: 400px;
+   height: 300px;
+   overflow: hidden;
+   border: 1px solid #123
+ }
+
+ .imgwraper {
+   width: 1200px;
+   height: 300px;
+   /*background: #123;
+   */animation: frames 5s ease-out infinite alternate;
+   -webkit-animation: frames 5s ease-out infinite alternate;
+}
+
+ .img {
+   float: left;
+   width: 400px;
+   height: 300px;
+ }
+
+ .img:nth-child(1) {
+   background: #666
+ }
+
+ .img:nth-child(2) {
+   background: salmon
+ }
+
+ .img:nth-child(3) {
+   background: aqua
+ }
+
+ @keyframes frames {
+   0%,
+   25% {
+     margin-left: 0;
+   }
+   35%,
+   60% {
+     margin-left: -400px;
+   }
+   75%,
+   100% {
+     margin-left: -800px;
+   }
+ }
