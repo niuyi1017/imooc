@@ -10,7 +10,7 @@ exports.index = (req, res) => {
         console.log(err)
       }
       res.render('index', {
-        title: 'imooc ??',
+        title: 'imooc index',
         categories
       })
     })
