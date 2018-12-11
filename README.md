@@ -36,9 +36,13 @@
 25 |[进击Node.js基础（一）、（二）](https://www.imooc.com/learn/348)|[点击查看](https://niuyi1017.github.io/2018/09/10/http-crawler.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/imoocNode)| Node.js API、HTTP、爬虫 
 26 |[Vue+Webpack打造todo应用](https://www.imooc.com/learn/935)|[点击查看](https://niuyi1017.github.io/imooc/vue-webpack-todo/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/vue-webpack-todo)| webpack、Vue
 27 |[快速入门Web阅读器开发](https://www.imooc.com/learn/1038)|[点击查看](https://niuyi1017.github.io/imooc/Easy-Reader/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/Easy-Reader)| 阅读器引擎epub.js、Vue.js应用和过渡动画、阅读器 翻页换肤目录进度等功能
+28 |[node+mongodb 建站攻略（一、二期）](https://www.imooc.com/learn/75)|[点击查看](https://movie.niuy.xyz/)|[点击查看](https://gitee.com/niuyi1017/movies)| node、express、jade、mongodb、bootstrap、jQuery、session、cookie
 
 
 ### 更新日志 
+
+### 2018-12-11  
+域名备案中...CDN静态资源暂时无法访问
 #### 2018-10-13   V 1.0.0
 * 部分大体积静态资源已抽离并放入cdn，大幅减小仓库体积，提升demo演示速度，方便clone   
 * 整理readme文档，表格分类，便于查看  
@@ -48,7 +52,7 @@
 
 > 这个仓库最开始是记录我自己跟着慕课网课程写的代码的地方。最近浏览量增长的很快，就整理了一下这个仓库，方便大家查看。   
 > 早期跟着课程视频写的代码，绝大部分都已经实现了课程中的效果，但不完全是按照老师的代码写。在保证项目效果的前提下，部分代码稍作修改或增加了自己的思考，用其他方式实现  
-> 部分视频课程中代码由于框架升级、依赖更新等原因无法正常运行，我会尽力找到解决办法，持续维护。
+> 部分视频课程中代码由于框架升级、依赖更新等原因可能无法正常运行，如果您遇到类似情况请及时反馈给我，我会尽力找到解决办法，持续维护。
 
 
 
