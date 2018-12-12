@@ -5,10 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hello world--todolist</title>
+  <style>
+    .actived{
+      color: red;
+    }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
   <div id="app">
+    <h3>Todo-List</h3>
     <input type="text" v-model="inputValue">
     <button v-on:click = "handleBtnClick">提交</button>
     <ul>
@@ -16,7 +22,22 @@
                   v-for="(item, index) in list" :key="index"
                   @delete="handleDelete">
     </ul>
+
+    <h3>计算属性&侦听属性</h3>
+    <div>{{fullName}}</div>
+
+    <h3>样式绑定</h3>
+    <div 
+        @click="handleStyleClick"
+        :class='{actived:isActived}'
+      >{{style}}</div>
+
+    <h3>对象列表渲染</h3>
+    <div v-for="(item, key, index) of userInfo" :key="index">{{key}}---{{item}}--{{index}}</div>
+
   </div>
+
+    
 
   
   <script>
@@ -38,7 +59,16 @@
       el: '#app',
       data:{
         list:[],
-        inputValue:''
+        inputValue:'',
+        firstName:'Jack',
+        lastName: 'niu',
+        style:"点击切换样式",
+        isActived:false,
+        userInfo:{
+          name:"niuyi",
+          age:"24",
+          gender:'male'
+        }
       },
       components: {
         TodoItem
@@ -50,7 +80,21 @@
         },
         handleDelete: function (index) {
           this.list.splice(index, 1)
+        },
+        handleStyleClick: function() {
+          this.isActived = !this.isActived;
         }
+      },
+      computed: {
+        fullName: {
+          get: function () {
+            return this.firstName + " " + this.lastName
+          },
+          set:function(value) {
+
+          }
+        }
+        
       }
 
     })
