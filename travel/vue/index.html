@@ -15,7 +15,7 @@
 <body>
   <div id="app">
     <h3>Todo-List</h3>
-    <input type="text" v-model="inputValue">
+    <input type="text" ref="input" v-model="inputValue">
     <button v-on:click = "handleBtnClick">提交</button>
     <ul>
       <todo-item :content="item" :index="index"
@@ -35,17 +35,45 @@
     <h3>对象列表渲染</h3>
     <div v-for="(item, key, index) of userInfo" :key="index">{{key}}---{{item}}--{{index}}</div>
 
+    <h3>组件细节</h3>
+    <table>
+      <tbody>
+        <tr is="row"></tr>
+        <tr is="row"></tr>
+        <tr is="row"></tr>
+      </tbody>
+    </table>
+
+    <h3>父子组件传值</h3>
+    <counter count='3' @change="handelChange"></counter>
+    <counter count='2' @change="handelChange"></counter>
+    <div>{{total}}</div>
+
   </div>
-
-    
-
-  
   <script>
     // Vue.component("TodoItem",{
     //   template: "<li>{{content}}</li>",
     //   props:["content"]
     // })
 
+    Vue.component("row",{
+      template: "<tr><td>我是row组件</td></tr>",
+    })
+    var counter = {
+      props:['count'],
+      template: "<div @click='handelCountclick'>{{number}}</div>",
+      data:function(){
+        return {
+          number:this.count
+        }
+      },
+      methods: {
+        handelCountclick: function () {
+          this.number++
+          this.$emit("change",1)
+        }
+      }
+    }
     var TodoItem = {
       template: "<li @click='handleClick'>{{content}}</li>",
       props: ["content","index"],
@@ -68,21 +96,27 @@
           name:"niuyi",
           age:"24",
           gender:'male'
-        }
+        },
+        total:5
       },
       components: {
-        TodoItem
+        TodoItem,
+        counter
       },
       methods:{
         handleBtnClick: function(){
           this.list.push(this.inputValue)
           this.inputValue=''
+          this.$refs.input.focus()
         },
         handleDelete: function (index) {
           this.list.splice(index, 1)
         },
         handleStyleClick: function() {
           this.isActived = !this.isActived;
+        },
+        handelChange:function() {
+          this.total++
         }
       },
       computed: {
@@ -94,9 +128,7 @@
 
           }
         }
-        
       }
-
     })
   </script>
 </body>
