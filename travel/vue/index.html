@@ -49,6 +49,11 @@
     <counter count='2' @change="handelChange"></counter>
     <div>{{total}}</div>
 
+    <h3>非父子组件通信</h3>
+    <child content="niu"></child>
+    <child content="yi"></child>
+
+    
   </div>
   <script>
     // Vue.component("TodoItem",{
@@ -56,6 +61,29 @@
     //   props:["content"]
     // })
 
+    Vue.prototype.bus = new Vue()
+    Vue.component("child", {
+      template:'<div @click="handleChildClick">{{selfContent}}</div>',
+      props:{
+        content: String
+      },
+      data: function (){
+        return {
+          selfContent : this.content
+        }
+      },
+      methods: {
+        handleChildClick: function () {
+          this.bus.$emit("childChange",this.selfContent)
+        }
+      },
+      mounted: function() {
+        var _this = this
+        this.bus.$on("childChange", function (msg) {
+          _this.selfContent = msg
+        })
+      },
+    })
     Vue.component("row",{
       template: "<tr><td>我是row组件</td></tr>",
     })
