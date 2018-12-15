@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slot&Animate - Vue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="./animate.css">
+  <style>
+    .fade-enter, .fade-leave-to{
+      opacity: 0;
+    }
+    .fade-enter-to, .fade-leave{
+      opacity: 1;
+    }
+    .fade-enter-active, .fade-leave-active{
+      transition: opacity 1s
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <child>
+      <template slot-scope="props">
+        <li>{{props.item}}</li>
+      </template>
+    </child>
+
+    <transition 
+      name="fade"
+      appear
+      appear-active-class="animated zoomIn fade-enter-active"
+      enter-active-class="animated zoomIn fade-enter-active"
+      leave-active-class="animated zoomOut fade-leave-active">
+      <h3 v-show="isShow">hello world</h3>
+    </transition>
+    <button @click="handleBtnClick">toggle</button>
+
+    <transition-group
+      name="fade">
+      <div v-for="item of list" :key="item.id">{{item.title}}</div>
+    </transition-group>
+    <button @click="handleListClick">toggle</button>
+    
+  </div>
+
+
+
+  <script>
+    var count=0;
+    Vue.component("child", {
+      template:`<div>
+                  <ul>
+                    <slot v-for="item of list"
+                          :item=item>
+                    </slot>
+                  </ul>
+                </div>`,
+      data: function(){
+        return {
+          list: [1, 2, 3, 4]
+        }
+      }
+    })
+    var app = new Vue({
+      el:'#app',
+      data: {
+        isShow: true,
+        list: []
+      },
+      methods: {
+        handleBtnClick: function(){
+          this.isShow = !this.isShow
+        },
+        handleListClick: function () {
+          this.list.push({
+            id: count++,
+            title: 'hello world'
+          })
+        }
+      }
+
+    })
+  </script>
+</body>
+</html>
