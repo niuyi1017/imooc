@@ -17,47 +17,8 @@
 <script>
   export default {
     name: "HomeRecommend",
-    data () {
-      return {
-        recommendList: [
-          {
-            id: '0001',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1705/e9/e993699e058a65a6a3.water.jpg_200x200_64b651df.jpg',
-            title: '济南宽厚里',
-            desc: '一提起宽厚里，很多老济南的记忆就复苏了'
-          },
-          {
-            id: '0002',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/c8/c8fa052a53e569c3b4.img.jpg_200x200_6a28d20a.jpg',
-            title: '济南方特东方神画',
-            desc: '一提起宽厚里，很多老济南的记忆就复苏了'
-          },
-          {
-            id: '0003',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1705/e9/e993699e058a65a6a3.water.jpg_200x200_64b651df.jpg',
-            title: '济南宽厚里',
-            desc: '一提起宽厚里，很多老济南的记忆就复苏了'
-          },
-          {
-            id: '0004',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/c8/c8fa052a53e569c3b4.img.jpg_200x200_6a28d20a.jpg',
-            title: '济南方特东方神画',
-            desc: '一提起宽厚里，很多老济南的记忆就复苏了'
-          },
-          {
-            id: '0005',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1705/e9/e993699e058a65a6a3.water.jpg_200x200_64b651df.jpg',
-            title: '济南宽厚里',
-            desc: '一提起宽厚里，很多老济南的记忆就复苏了'
-          },
-          {
-            id: '0006',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/c8/c8fa052a53e569c3b4.img.jpg_200x200_6a28d20a.jpg',
-            title: '济南方特东方神画',
-            desc: '一提起宽厚里，很多老济南的记忆就复苏了'
-          }
-        ]
-      }
+    props: {
+      recommendList: Array
     }
   }
 </script>
