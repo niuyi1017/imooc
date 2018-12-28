@@ -5,7 +5,8 @@
     <city-list
       :cities="cities"
       :hotCities="hotCities"/>
-    <city-alphabet/>
+    <city-alphabet
+      :cities="cities"/>
   </div>
   
 </template>
