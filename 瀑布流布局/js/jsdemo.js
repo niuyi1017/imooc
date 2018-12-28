@@ -1,9 +1,9 @@
 window.onload = function(){
 	waterfall('main','box');
 	var dataInt = {"data":[
-							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjyhh57j21kw1bob29.jpg'},
-							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjxy8e9j21kw0w0kfb.jpg'},
-							{"src":'http://pgdwgiv7s.bkt.clouddn.com/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3ck0h513j21jk0v9kjl.jpg'}
+		{ "src":'http://imooc.niuy.xyz/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjyhh57j21kw1bob29.jpg'},
+		{ "src":'http://imooc.niuy.xyz/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjxy8e9j21kw0w0kfb.jpg'},
+		{ "src":'http://imooc.niuy.xyz/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3ck0h513j21jk0v9kjl.jpg'}
 						]
 					}
 	window.onscroll = function(){
