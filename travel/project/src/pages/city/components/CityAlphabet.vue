@@ -2,15 +2,22 @@
   <ul class="list">
     <li class="item"
       v-for="(item, key) of cities"
-      :key="item.key">{{key}}</li>
+      :key="item.key"
+      @click="handleLetterClick(key)">{{key}}</li>
   </ul>
 </template>
 <script>
+ /* eslint-disable */ 
   export default{
     name: 'CityAlphabet',
     props:{
       cities: Object
-    }
+    },
+    methods: {
+      handleLetterClick (key){
+        this.$emit('change',key)
+      }
+    },
   }
 
 </script>

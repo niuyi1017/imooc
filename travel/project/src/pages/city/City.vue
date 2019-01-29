@@ -4,13 +4,16 @@
     <city-search/>
     <city-list
       :cities="cities"
-      :hotCities="hotCities"/>
+      :hotCities="hotCities"
+      :letter="letter"/>
     <city-alphabet
-      :cities="cities"/>
+      :cities="cities"
+      @change="handleLetterChange"/>
   </div>
   
 </template>
 <script>
+/* eslint-disable */ 
 import axios from 'axios'
 import CityHeader from '@/pages/city/components/CityHeader'
 import CitySearch from './components/Search'
@@ -26,8 +29,9 @@ export default {
     },
     data () {
       return {
-        cities:[],
-        hotCities:[]
+        cities:{},
+        hotCities:[],
+        letter: ''
       }
     },
     methods: {
@@ -42,6 +46,9 @@ export default {
           this.cities = data.cities 
           this.hotCities = data.hotCities
         }
+      },
+      handleLetterChange (key) {
+        this.letter = key
       }
     },
     mounted() {
