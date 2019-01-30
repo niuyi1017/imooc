@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">济南</div>
+            <div class="button">{{this.currentCity}}</div>
           </div>
         </div>
       </div>
@@ -14,7 +14,8 @@
         <div class="button-list">
           <div class="button-wrapper" 
             v-for="item of hotCities"
-            :key="item.id">
+            :key="item.id"
+            @click="handleCityClick(item.name)">
             <div class="button">{{item.name}}</div>
           </div>
         </div>
@@ -26,7 +27,8 @@
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list"
           :key="innerItem.id"
-          v-for="innerItem of item">
+          v-for="innerItem of item"
+          @click="handleCityClick(innerItem.name)">
           <div class="item border-bottom">{{innerItem.name}}</div>
         </div>
       </div>
@@ -37,25 +39,38 @@
 <script>
 /* eslint-disable */
 import Bscroll from 'better-scroll'
-  export default {
-    name: 'CityList',
-    props: {
-      hotCities: Array,
-      cities: Object,
-      letter: String
+import { mapState, mapMutations } from "vuex";
+export default {
+  name: 'CityList',
+  props: {
+    hotCities: Array,
+    cities: Object,
+    letter: String
+  },
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  },
+  methods: {
+    handleCityClick (city){
+      this.changeCity(city)
+      this.$router.push('/')
     },
-    mounted() {
-      this.scroll = new Bscroll(this.$refs.wrapper)
-    },
-    watch: {
-      letter () {
-        if(this.letter){
-          const element = this.$refs[this.letter][0]
-          this.scroll.scrollToElement(element)
-        }
+    ...mapMutations(['changeCity'])
+  },
+  watch: {
+    letter () {
+      if(this.letter){
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
       }
-    },
-  }
+    }
+  },
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+}
 </script>
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varible.styl'
