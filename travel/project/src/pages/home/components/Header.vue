@@ -19,9 +19,6 @@
 import {mapState} from 'vuex'
 export default {
   name: 'HomeHeader',
-  // props: {
-  //   city: String
-  // },
   computed: {
     ...mapState(['city'])
   },
