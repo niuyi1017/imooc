@@ -13,7 +13,7 @@
         class="header-fixed" 
         v-show="!showAbs"
         :style="opacityStyle">
-      景点详情
+      {{sightName}}
       <router-link to="/">
         <div class="iconfont header-fixed-back">&#xe624;</div>
       </router-link>
@@ -23,6 +23,9 @@
 <script>
 export default {
   name: "DetailHeader",
+  props: {
+    sightName: String
+  },
   data() {
     return {
       showAbs: true,
@@ -79,6 +82,7 @@ export default {
   top 0
   left 0
   right 0
+  z-index 2
   height $headerHeight
   line-height $headerHeight
   color #ffffff

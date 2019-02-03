@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1705/e9/e993699e058a65a6a3.water.jpg_600x330_58c75a46.jpg">
+      <img class="banner-img" :src="bannerImg">
       <div class="banner-info">
-        <div class="banner-title">济南世贸宽</div>
-        <div class="banner-number"><span class="iconfont icon-banner">&#xe631;</span>39</div>
+        <div class="banner-title">{{this.sightName}}</div>
+        <div class="banner-number"><span class="iconfont icon-banner">&#xe631;</span>{{this.gallaryImgs.length}}</div>
       </div>
     </div>
     <gallary 
-          :imgs="imgs" 
+          :imgs="gallaryImgs" 
           v-show="showGallary"
           @close="handleClose"/>
   </div>
@@ -21,11 +21,13 @@ export default {
   components: {
     Gallary
   },
+  props: {
+    bannerImg: String,
+    gallaryImgs: Array,
+    sightName: String
+  },
   data () {
     return{
-      imgs: ['//img1.qunarzz.com/sight/p0/1705/e9/e993699e058a65a6a3.water.jpg_600x330_58c75a46.jpg',
-          '//img1.qunarzz.com/sight/p0/1408/20/1d9f6dd0750e74443f69434d616943fe.jpg_600x330_90e2a80c.jpg'
-          ],
       showGallary: false
     }
   },

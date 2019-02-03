@@ -5,7 +5,7 @@ import City from '@/pages/city/City'
 import Detail from '@/pages/detail/Detail'
 
 Vue.use(VueRouter)
-
+/* eslint-disable */
 export default new VueRouter({
   routes: [
     {
@@ -23,5 +23,8 @@ export default new VueRouter({
       name: 'Detail',
       component: Detail
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
