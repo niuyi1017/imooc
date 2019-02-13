@@ -1,4 +1,3 @@
-
 # imooc慕课网学习demo  
 > 【持续更新】这个仓库整理了[慕课网](https://www.imooc.com/)相关课程的源码、Live Demo、主要知识点等。  
 > 欢迎各位大佬 star、fork、issue、PR。
@@ -37,13 +36,17 @@
 26 |[Vue+Webpack打造todo应用](https://www.imooc.com/learn/935)|[点击查看](https://niuyi1017.github.io/imooc/vue-webpack-todo/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/vue-webpack-todo)| webpack、Vue
 27 |[快速入门Web阅读器开发](https://www.imooc.com/learn/1038)|[点击查看](https://niuyi1017.github.io/imooc/Easy-Reader/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/Easy-Reader)| 阅读器引擎epub.js、Vue.js应用和过渡动画、阅读器 翻页换肤目录进度等功能
 28 |[node+mongodb 建站攻略（一、二期）](https://www.imooc.com/learn/75)|[点击查看](https://movie.niuy.xyz/)|[点击查看](https://gitee.com/niuyi1017/movies)| node、express、jade、mongodb、bootstrap、jQuery、session、cookie
+28 |[Vue2.5开发去哪儿网App 从零基础入门到实战项目](https://coding.imooc.com/learn/list/203.html)|[点击查看](https://niuyi1017.github.io/imooc/travel/project/dist/index.html#/)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/travel/project)| Vue、Vuex Vue-router、Vue-cli
 
+### 更新日志   
 
-### 更新日志 
-
-### 2018-12-11  
+#### 2019-02-11
+* 新增：Vue2.5开发去哪儿网App 从零基础入门到实战项目 
+#### 2019-01-01
+* 域名备案完毕，静态资源可以访问啦~
+#### 2018-12-11  
 域名备案中...CDN静态资源暂时无法访问
-#### 2018-10-13   V 1.0.0
+### 2018-10-13   V 1.0.0
 * 部分大体积静态资源已抽离并放入cdn，大幅减小仓库体积，提升demo演示速度，方便clone   
 * 整理readme文档，表格分类，便于查看  
 * review 部分代码，修复部分bug   
