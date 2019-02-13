@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get('/mock/index.json?city=' + this.city)
+      axios.get('https://niuyi1017.github.io/imooc/travel/project/dist/mock/index.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
