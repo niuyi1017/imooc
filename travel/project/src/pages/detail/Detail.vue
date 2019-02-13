@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     getDetailInfo () {
-      axios.get('/imooc/travel/project/dist/mock/detail.json', {
+      axios.get('https://niuyi1017.github.io/imooc/travel/project/dist/mock/detail.json', {
       params: {
         id: this.$route.params.id
       }
