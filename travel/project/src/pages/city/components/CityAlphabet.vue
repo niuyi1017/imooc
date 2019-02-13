@@ -5,7 +5,7 @@
       :key="item"
       :ref="item"
       @click="handleLetterClick(item)"
-      @touchstart="handleTouchStart"
+      @touchstart.prevent="handleTouchStart"
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd">{{item}}</li>
   </ul>
