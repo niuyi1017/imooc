@@ -36,7 +36,7 @@
 26 |[Vue+Webpack打造todo应用](https://www.imooc.com/learn/935)|[点击查看](https://niuyi1017.github.io/imooc/vue-webpack-todo/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/vue-webpack-todo)| webpack、Vue
 27 |[快速入门Web阅读器开发](https://www.imooc.com/learn/1038)|[点击查看](https://niuyi1017.github.io/imooc/Easy-Reader/dist/index.html)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/Easy-Reader)| 阅读器引擎epub.js、Vue.js应用和过渡动画、阅读器 翻页换肤目录进度等功能
 28 |[node+mongodb 建站攻略（一、二期）](https://www.imooc.com/learn/75)|[点击查看](https://movie.niuy.xyz/)|[点击查看](https://gitee.com/niuyi1017/movies)| node、express、jade、mongodb、bootstrap、jQuery、session、cookie
-28 |[Vue2.5开发去哪儿网App 从零基础入门到实战项目](https://coding.imooc.com/learn/list/203.html)|[点击查看](https://niuyi1017.github.io/imooc/travel/project/dist/index.html#/)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/travel/project)| Vue、Vuex Vue-router、Vue-cli
+29 |[Vue2.5开发去哪儿网App 从零基础入门到实战项目](https://coding.imooc.com/learn/list/203.html)|[点击查看](https://niuyi1017.github.io/imooc/travel/project/dist/index.html#/)|[点击查看](https://github.com/niuyi1017/imooc/tree/master/travel/project)| Vue、Vuex Vue-router、Vue-cli
 
 ### 更新日志   
 

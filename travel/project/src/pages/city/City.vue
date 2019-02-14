@@ -37,7 +37,7 @@ export default {
     },
     methods: {
       getCityInfo() {
-        axios.get('/imooc/travel/project/dist/mock/city.json')
+        axios.get('https://niuyi1017.github.io/imooc/travel/project/dist/mock/city.json')
           .then(this.handleGetCityInfoSucc)
       },
       handleGetCityInfoSucc (res) {
