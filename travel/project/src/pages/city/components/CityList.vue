@@ -25,7 +25,7 @@
         :key="key"
         :ref="key">
         <div class="title border-topbottom">{{key}}</div>
-        <div class="item-list"
+        <div class="item-list needsclick"
           :key="innerItem.id"
           v-for="innerItem of item"
           @click="handleCityClick(innerItem.name)">

@@ -1,6 +1,6 @@
 <template>
   <ul class="list">
-    <li class="item"
+    <li class="item needsclick"
       v-for="item of letters"
       :key="item"
       :ref="item"

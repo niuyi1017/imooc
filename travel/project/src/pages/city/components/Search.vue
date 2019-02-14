@@ -11,7 +11,7 @@
           v-show="keyword">
       <ul>
         <li 
-          class="search-item border-bottom"
+          class="search-item border-bottom needsclick"
           v-for="item of list"
           :key="item.id"
           @click="handleCityClick(item.name)"
