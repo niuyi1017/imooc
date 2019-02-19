@@ -12,6 +12,7 @@
     "babel-polyfill": "^6.26.0",
     "better-scroll": "^1.14.1",
     "body-parser": "^1.18.3",
+    "create-keyframe-animation": "^0.1.0",
     "fastclick": "^1.0.6",
     "jsonp": "^0.2.1",
     "stylus": "^0.54.5",
