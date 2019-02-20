@@ -7,7 +7,6 @@ function findIndex(list, song) {
     return item.id ===  song.id
   })
 }
-
 export const selectPlay = function ({commit, state}, {list, index}) {
   commit(types.SET_SEQUENCE_LIST, list)
   if(state.mode === playMode.random){
