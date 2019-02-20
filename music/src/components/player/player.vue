@@ -27,6 +27,15 @@
           </div>
         </div>
         <div class="bottom">
+          <div class="progress-wrapper">
+            <span class="time time-l">{{format(currentTime)}}</span>
+            <div class="progress-bar-wrapper">
+              <progress-bar 
+                            :percent="percent"
+                            @percentChange="onProgressBarChange"/>
+            </div>
+            <span class="time time-r">{{format(currentSong.duration)}}</span>
+          </div>
           <div class="operators">
             <div class="icon i-left">
               <i class="icon-sequence"></i>
@@ -59,20 +68,31 @@
           <p class="desc" v-html="currentSong.singer"></p>
         </div>
         <div class="control">
-          <i @click.stop="togglePlaying" class="icon-mini" :class="miniIcon"></i>
+          <progress-circle :radius="32" :percent="percent">
+            <i @click.stop="togglePlaying" class="icon-mini" :class="miniIcon"></i>
+          </progress-circle>
         </div>
         <div class="control">
           <i class="icon-playlist"></i>
         </div>
       </div>
     </transition>
-    <audio :src="currentSong.url" ref="audio" @canplay="ready" @error="error"></audio>
+    <audio 
+            :src="currentSong.url" 
+            ref="audio" 
+            @canplay="ready" 
+            @error="error"
+            @timeupdate="updateTime"
+            >
+    </audio>
   </div>
 </template>
 <script>
 import {mapGetters, mapMutations} from 'vuex'
 import animations from 'create-keyframe-animation'
 import { prefixStyle } from '@/common/js/dom'
+import ProgressBar from '@/base/progress-bar/progress-bar'
+import ProgressCircle from '@/base/progress-circle/progress-circle'
 
 const transform = prefixStyle('transform')
 // const transitionDuration = prefixStyle('transitionDuration')
@@ -81,8 +101,13 @@ export default {
   name: 'Play',
   data() {
     return {
-      songReady: false
+      songReady: false,
+      currentTime: 0
     }
+  },
+  components: {
+    ProgressBar,
+    ProgressCircle
   },
   computed: {
     cdCls() {
@@ -96,6 +121,9 @@ export default {
     },
     disableCls() {
       return this.songReady ? '' : 'disable'
+    },
+    percent () {
+      return this.currentTime / this.currentSong.duration
     },
     ...mapGetters([
       'fullScreen',
@@ -111,6 +139,12 @@ export default {
     },
     open () {
       this.setFullScreen(true)
+    },
+    onProgressBarChange (percent) {
+      this.$refs.audio.currentTime = this.currentSong.duration * percent
+      if (!this.playing){
+        this.togglePlaying()
+      }
     },
     togglePlaying (){
       if(!this.songReady){
@@ -151,6 +185,23 @@ export default {
     },
     error () {
       this.songReady = true
+    },
+    updateTime (e) {
+      this.currentTime = e.target.currentTime
+    },
+    format (interval) {
+      interval = interval | 0
+      const minute = interval / 60 | 0
+      const second = this._pad(interval % 60)
+      return `${minute}:${second}`
+    },
+    _pad (num, n=2) {
+      let len = num.toString().length
+      while(len < n){
+        num = '0' + num
+        len ++
+      }
+      return num
     },
     enter (el, done) {
       const {x, y, scale } = this._getPosAndScale()
