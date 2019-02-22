@@ -148,7 +148,7 @@ export default {
   },
   computed: {
     cdCls () {
-      return this.playing ? 'play' : ''
+      return this.playing ? 'play' : 'play pause'
     },
     playIcon () {
       return this.playing ? 'icon-pause' : 'icon-play'
@@ -223,7 +223,7 @@ export default {
       if(!this.songReady){
         return
       }
-       if(this.playlist.length == 1){
+       if(this.playList.length == 1){
         this.loop()
       }else{
         let index = this.currentIndex-1
@@ -548,6 +548,8 @@ export default {
                 border: 10px solid rgba(255, 255, 255, 0.1)
               .play
                 animation: rotate 20s linear infinite
+              .pause
+                animation-play-state: paused
           .playing-lyric-wrapper
             width: 80%
             margin: 30px auto 0 auto
