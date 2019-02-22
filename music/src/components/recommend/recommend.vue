@@ -28,16 +28,18 @@
       </div>
       <loading/>
     </scroll>
+    <router-view></router-view>
   </div>
 </template>
 <script>
-/* eslint-disable */
+
 import { getRecommend, getDiscList } from '@/api/recommend'
 import { ERR_OK } from '@/api/config'
 import Slider from '@/base/slider/slider'
 import Scroll from '@/base/scroll/scroll'
 import Loading from '@/base/loading/loading'
 import {playlistMixin} from '@/common/js/mixin'
+import {mapMutations} from 'vuex'
 export default {
   name: 'Recommend',
   mixins: [playlistMixin],
@@ -65,6 +67,7 @@ export default {
     _getRecommend () {
       getRecommend().then((res) =>{
         if(res.code === ERR_OK){
+         
           this.recommends = res.data.slider
         }
       })
@@ -81,8 +84,18 @@ export default {
         this.$refs.scroll.refresh()
         this.checkLoaded = true 
       }
-    }
+    },
+    selectItem(item) {
+      this.$router.push({
+        path: `/recommend/${item.dissid}`
+      })
+      this.setDisc(item)
+    },
+    ...mapMutations({
+    setDisc: 'SET_DISC'
+  })
   },
+  
 }
 </script>
 <style scoped lang="stylus" rel="stylesheet/stylus">
