@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <div class="search-box-wrapper">
-      <search-box></search-box>
+      <search-box ref="searchBox" @query="onQueryChange"></search-box>
     </div>
     <div ref="shortcutWrapper" class="shortcut-wrapper" v-show="!query">
       <scroll :refreshDelay="refreshDelay" ref="shortcut" class="shortcut" :data="shortcut">
@@ -26,6 +26,11 @@
         </div>
       </scroll>
     </div>
+     <div class="search-result" v-show="query" ref="searchResult">
+      <suggest @listScroll="blurInput" @select="saveSearch" ref="suggest" :query="query"></suggest>
+    </div>
+    <confirm ref="confirm" @confirm="clearSearchHistory" text="是否清空所有搜索历史" confirmBtnText="清空"></confirm>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -36,6 +41,7 @@ import Scroll from '@/base/scroll/scroll'
 import {playlistMixin, searchMixin} from '@/common/js/mixin'
 import Confirm from '@/base/confirm/confirm'
 import Suggest from '@/components/suggest/suggest'
+import SearchList from '@/base/search-list/search-list'
 import {mapActions} from 'vuex'
 export default {
   name: 'Search',
@@ -44,11 +50,26 @@ export default {
     SearchBox,
     Scroll,
     Confirm,
-    Suggest
+    Suggest,
+    SearchList
   },
   data() {
     return {
       hotKey: []
+    }
+  },
+  computed: {
+    shortcut() {
+      return this.hotKey.concat(this.searchHistory)
+    }
+  },
+  watch: {
+    query(newQuery) {
+      if (!newQuery) {
+        setTimeout(() => {
+          this.$refs.shortcut.refresh()
+        }, 20)
+      }
     }
   },
   methods: {
@@ -65,6 +86,9 @@ export default {
       this.$refs.suggest.refresh()
       this.$refs.shortcutWrapper.style.bottom = bottom
       this.$refs.shortcut.refresh()
+    },
+    showConfirm() {
+      this.$refs.confirm.show()
     },
     ...mapActions([
       'clearSearchHistory'
